@@ -1,0 +1,114 @@
+{
+    "id": "ericrosen",
+    "username": "EricRosen",
+    "perfs": {
+        "chess960": { "games": 216, "rating": 2110, "rd": 89, "prog": -40 },
+        "antichess": {
+            "games": 42,
+            "rating": 1939,
+            "rd": 191,
+            "prog": -77,
+            "prov": true
+        },
+        "atomic": {
+            "games": 39,
+            "rating": 2022,
+            "rd": 172,
+            "prog": -124,
+            "prov": true
+        },
+        "racingKings": {
+            "games": 10,
+            "rating": 1901,
+            "rd": 240,
+            "prog": 0,
+            "prov": true
+        },
+        "racer": { "runs": 118, "score": 107 },
+        "ultraBullet": { "games": 1143, "rating": 2174, "rd": 84, "prog": -22 },
+        "blitz": { "games": 5383, "rating": 2603, "rd": 46, "prog": -13 },
+        "kingOfTheHill": {
+            "games": 51,
+            "rating": 2212,
+            "rd": 202,
+            "prog": -24,
+            "prov": true
+        },
+        "crazyhouse": {
+            "games": 470,
+            "rating": 2308,
+            "rd": 170,
+            "prog": 7,
+            "prov": true
+        },
+        "threeCheck": {
+            "games": 32,
+            "rating": 2234,
+            "rd": 159,
+            "prog": -36,
+            "prov": true
+        },
+        "streak": { "runs": 8, "score": 111 },
+        "storm": { "runs": 165, "score": 79 },
+        "bullet": { "games": 15727, "rating": 2747, "rd": 46, "prog": 12 },
+        "correspondence": {
+            "games": 1,
+            "rating": 1741,
+            "rd": 415,
+            "prog": 0,
+            "prov": true
+        },
+        "horde": {
+            "games": 43,
+            "rating": 1912,
+            "rd": 153,
+            "prog": -208,
+            "prov": true
+        },
+        "puzzle": {
+            "games": 278,
+            "rating": 2513,
+            "rd": 124,
+            "prog": 0,
+            "prov": true
+        },
+        "classical": { "games": 175, "rating": 2504, "rd": 97, "prog": 67 },
+        "rapid": { "games": 982, "rating": 2621, "rd": 66, "prog": -6 }
+    },
+    "title": "IM",
+    "patron": true,
+    "createdAt": 1433434819500,
+    "online": false,
+    "profile": {
+        "country": "US",
+        "location": "St. Louis",
+        "bio": "https://i.imgur.com/2UTpnTq.jpg\r\nhttps://www.twitch.tv/imrosen\r\nhttps://www.youtube.com/rosenchess\r\nhttps://twitter.com/IM_Rosen",
+        "firstName": "Eric",
+        "lastName": "Rosen",
+        "fideRating": 2355,
+        "uscfRating": 2440,
+        "links": "https://twitter.com/IM_Rosen\r\nhttps://www.instagram.com/ericrosenphotography/\r\nhttps://go.twitch.tv/imrosen\r\nhttps://www.youtube.com/rosenchess\r\nhttp://flickr.com/photos/ericrosenphotography"
+    },
+    "seenAt": 1654377224603,
+    "playTime": { "total": 7413172, "tv": 618443 },
+    "url": "https://lichess.org/@/EricRosen",
+    "count": {
+        "all": 28015,
+        "rated": 24319,
+        "ai": 221,
+        "draw": 1230,
+        "drawH": 1214,
+        "loss": 7462,
+        "lossH": 7297,
+        "win": 19323,
+        "winH": 19283,
+        "bookmark": 1,
+        "playing": 0,
+        "import": 9,
+        "me": 0
+    },
+    "followable": true,
+    "following": true,
+    "blocking": false,
+    "followsYou": false
+}

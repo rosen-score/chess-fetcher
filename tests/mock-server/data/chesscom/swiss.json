@@ -1,0 +1,29 @@
+{
+    "name": "Late-Titled-Tuesday-Blitz-June-07-2022",
+    "url": "https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103",
+    "creator": "CHESScom",
+    "status": "finished",
+    "start_time": 1654635600,
+    "finish_time": 1654643026,
+    "settings": {
+        "type": "swiss",
+        "rules": "chess",
+        "is_rated": true,
+        "is_official": true,
+        "is_invite_only": false,
+        "user_advance_count": 1,
+        "winner_places": 3,
+        "registered_user_count": 291,
+        "total_rounds": 11,
+        "time_class": "blitz",
+        "time_control": "180+1"
+    },
+    "players": [
+        { "username": "hikaru", "status": "winner" },
+        { "username": "duhless", "status": "registered" },
+        { "username": "bulldog167", "status": "registered" },
+        { "username": "arash_tahbaz", "status": "registered" },
+        { "username": "fairchess_on_youtube", "status": "registered" }
+    ],
+    "rounds": ["https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103/11"]
+}

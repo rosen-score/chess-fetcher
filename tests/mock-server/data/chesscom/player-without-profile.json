@@ -1,0 +1,13 @@
+{
+    "player_id": 187326755,
+    "@id": "https://api.chess.com/pub/player/blank-user",
+    "url": "https://www.chess.com/member/blank-user",
+    "username": "blank-user",
+    "followers": 0,
+    "country": "https://api.chess.com/pub/country/US",
+    "last_online": 1655594965,
+    "joined": 1655594965,
+    "status": "basic",
+    "is_streamer": false,
+    "verified": false
+}

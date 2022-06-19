@@ -1,0 +1,29 @@
+{
+    "id": "w8Gsl69m",
+    "rated": false,
+    "variant": "standard",
+    "speed": "blitz",
+    "perf": "blitz",
+    "createdAt": 1654288998290,
+    "lastMoveAt": 1654289589962,
+    "status": "mate",
+    "players": {
+        "white": {
+            "user": {
+                "name": "EricRosen",
+                "title": "IM",
+                "patron": true,
+                "id": "ericrosen"
+            },
+            "rating": 2603
+        },
+        "black": {
+            "user": { "name": "Obese_reece", "id": "obese_reece" },
+            "rating": 2015
+        }
+    },
+    "winner": "white",
+    "moves": "e4 e5 Nf3 Nf6 Bc4 Nc6 d4 Nxe4 dxe5 Bc5 Qd5 Bxf2+ Ke2 O-O Qxe4 Bb6 Bd3 f5 exf6 Re8 f7+ Kxf7 Ng5+ Kg8 Bc4+ d5 Bxd5+ Be6 Bxe6+ Kf8 Nxh7+ Ke7 Bg5+ Kd6 Qd5#",
+    "pgn": "[Event \"Casual Blitz game\"]\n[Site \"https://lichess.org/w8Gsl69m\"]\n[Date \"2022.06.03\"]\n[White \"EricRosen\"]\n[Black \"Obese_reece\"]\n[Result \"1-0\"]\n[UTCDate \"2022.06.03\"]\n[UTCTime \"20:43:18\"]\n[WhiteElo \"2603\"]\n[BlackElo \"2015\"]\n[WhiteTitle \"IM\"]\n[Variant \"Standard\"]\n[TimeControl \"300+3\"]\n[ECO \"C55\"]\n[Termination \"Normal\"]\n\n1. e4 { [%clk 0:05:00] } 1... e5 { [%clk 0:05:00] } 2. Nf3 { [%clk 0:04:58] } 2... Nf6 { [%clk 0:05:00] } 3. Bc4 { [%clk 0:04:56] } 3... Nc6 { [%clk 0:04:59] } 4. d4 { [%clk 0:04:44] } 4... Nxe4 { [%clk 0:04:25] } 5. dxe5 { [%clk 0:04:32] } 5... Bc5 { [%clk 0:04:08] } 6. Qd5 { [%clk 0:04:30] } 6... Bxf2+ { [%clk 0:03:07] } 7. Ke2 { [%clk 0:04:30] } 7... O-O { [%clk 0:03:09] } 8. Qxe4 { [%clk 0:04:31] } 8... Bb6 { [%clk 0:02:52] } 9. Bd3 { [%clk 0:03:50] } 9... f5 { [%clk 0:02:39] } 10. exf6 { [%clk 0:03:40] } 10... Re8 { [%clk 0:02:37] } 11. f7+ { [%clk 0:03:07] } 11... Kxf7 { [%clk 0:02:38] } 12. Ng5+ { [%clk 0:03:08] } 12... Kg8 { [%clk 0:02:01] } 13. Bc4+ { [%clk 0:03:04] } 13... d5 { [%clk 0:01:42] } 14. Bxd5+ { [%clk 0:03:02] } 14... Be6 { [%clk 0:01:25] } 15. Bxe6+ { [%clk 0:02:58] } 15... Kf8 { [%clk 0:01:07] } 16. Nxh7+ { [%clk 0:02:32] } 16... Ke7 { [%clk 0:01:03] } 17. Bg5+ { [%clk 0:02:23] } 17... Kd6 { [%clk 0:01:03] } 18. Qd5# { [%clk 0:02:20] } 1-0\n\n\n",
+    "clock": { "initial": 300, "increment": 3, "totalTime": 420 }
+}

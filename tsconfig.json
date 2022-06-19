@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "lib": ["DOM", "es2015"],
+        "outDir": "dist/",
+        "sourceMap": true,
+        "strict": true
+    }
+}

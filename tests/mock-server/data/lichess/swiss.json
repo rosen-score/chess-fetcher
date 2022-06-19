@@ -1,0 +1,23 @@
+{
+    "id": "48jrx3m6",
+    "createdBy": "ericrosen",
+    "startsAt": "2022-03-04T04:30:00.000Z",
+    "name": "Ukraine Charity Tournament",
+    "clock": { "limit": 300, "increment": 2 },
+    "variant": "standard",
+    "round": 7,
+    "nbRounds": 7,
+    "nbPlayers": 414,
+    "nbOngoing": 0,
+    "status": "finished",
+    "stats": {
+        "games": 847,
+        "whiteWins": 820,
+        "blackWins": 808,
+        "draws": 66,
+        "byes": 1,
+        "absences": 1065,
+        "averageRating": 1684
+    },
+    "rated": true
+}
