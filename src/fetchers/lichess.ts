@@ -9,10 +9,10 @@ export function qs(obj: Record<string, any>): string {
 }
 
 export function profile(username: string): Promise<Profile> {
-    return fetchFromEndpoint(`https://lichess.org/api/user/${username}`).then(function (response) {
+    return fetchFromEndpoint(`https://lichess.org/api/user/${username}`).then((response) => {
         checkForServerError(response)
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             response.json().then((data) => resolve(formatProfile(data)))
         })
     })
@@ -27,10 +27,10 @@ export function swiss(id: string): Promise<Tournament> {
 }
 
 function tournament(url: string): Promise<Tournament> {
-    return fetchFromEndpoint(url).then(function (response) {
+    return fetchFromEndpoint(url).then((response) => {
         checkForServerError(response)
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             response.json().then((data) => resolve(formatTournament(data)))
         })
     })
@@ -61,7 +61,7 @@ async function games(url: string, callback: GameCallback, params: LichessGamePar
 
     checkForServerError(response)
 
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
         let reader = response.body!.getReader()
         let gen = ndjson(reader)
 

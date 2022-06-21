@@ -36,9 +36,9 @@ test('fetch player games', async () => {
     // there are 15 games in the test files
     expect.assertions(15 + 1)
 
-    await playerGames('imrosen', function (game) {
+    await playerGames('imrosen', (game) => {
         expect(game.site).toBe('chess.com')
-    }).then(function (done) {
+    }).then((done) => {
         expect(done).toBe(true)
     })
 })
@@ -46,15 +46,9 @@ test('fetch player games', async () => {
 test('fetch player games w/filter', async () => {
     let matchingGameIds: Array<string> = []
 
-    await playerGames(
-        'imrosen',
-        function (game) {
-            matchingGameIds.push(game.id)
-        },
-        {
-            since: 1651591721000,
-        }
-    )
+    await playerGames('imrosen', (game) => matchingGameIds.push(game.id), {
+        since: 1651591721000,
+    })
 
     expect(matchingGameIds).toStrictEqual(['45331880249', '45331170609', '45330568705'])
 })
@@ -68,7 +62,7 @@ test('fetch player games w/ invalid filter', () => {
 })
 
 test('fetch titled players', () => {
-    return titledPlayers().then(function (players) {
+    return titledPlayers().then((players) => {
         expect(players).toStrictEqual({
             zhigalko_sergei: 'GM',
             ajian: 'NM',
@@ -88,7 +82,7 @@ test('fetch titled players', () => {
 })
 
 test('fetch titled players of a specific title', () => {
-    return titledPlayers(['GM', 'IM']).then(function (players) {
+    return titledPlayers(['GM', 'IM']).then((players) => {
         expect(players).toStrictEqual({
             zhigalko_sergei: 'GM',
             imrosen: 'IM',
@@ -117,9 +111,9 @@ test('fetch tournament games (arena)', async () => {
     // there are 5 games in the test files
     expect.assertions(5 + 1)
 
-    await tournamentGames('10-bullet-1925132', function (game) {
+    await tournamentGames('10-bullet-1925132', (game) => {
         expect(game.site).toBe('chess.com')
-    }).then(function (data) {
+    }).then((data) => {
         expect(data).toBe(true)
     })
 })
@@ -128,9 +122,9 @@ test('fetch tournament games (swiss)', async () => {
     // there are 5 games in the test files
     expect.assertions(5 + 1)
 
-    await tournamentGames('late-titled-tuesday-blitz-june-07-2022-3192103', function (game) {
+    await tournamentGames('late-titled-tuesday-blitz-june-07-2022-3192103', (game) => {
         expect(game.site).toBe('chess.com')
-    }).then(function (data) {
+    }).then((data) => {
         expect(data).toBe(true)
     })
 })
@@ -139,7 +133,7 @@ describe('title is included with player info for games', () => {
     test('of player', async () => {
         expect.hasAssertions()
 
-        await playerGames('imrosen', function (game) {
+        await playerGames('imrosen', (game) => {
             expect([game.players.white.title, game.players.black.title]).toContain('IM')
         })
     })
@@ -147,7 +141,7 @@ describe('title is included with player info for games', () => {
     test('of tournament', async () => {
         let games: Array<Game> = []
 
-        await tournamentGames('late-titled-tuesday-blitz-june-07-2022-3192103', function (game) {
+        await tournamentGames('late-titled-tuesday-blitz-june-07-2022-3192103', (game) => {
             games.push(game)
         })
 

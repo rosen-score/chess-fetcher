@@ -29,9 +29,9 @@ test('build query string from options', () => {
 
 test('fetch player games', async () => {
     expect.assertions(8 + 1)
-    await playerGames('EricRosen', function (game) {
+    await playerGames('EricRosen', (game) => {
         expect(game.site).toBe('lichess')
-    }).then(function (done) {
+    }).then((done) => {
         expect(done).toBe(true)
     })
 })
@@ -57,18 +57,18 @@ test('fetch player games of someone with no games', async () => {
 
 test('fetch arena games', async () => {
     expect.assertions(8 + 1)
-    await arenaGames('2oEh6hZw', function (game) {
+    await arenaGames('2oEh6hZw', (game) => {
         expect(game.site).toBe('lichess')
-    }).then(function (done) {
+    }).then((done) => {
         expect(done).toBe(true)
     })
 })
 
 test('fetch swiss games', async () => {
     expect.assertions(8 + 1)
-    await swissGames('48jrx3m6', function (game) {
+    await swissGames('48jrx3m6', (game) => {
         expect(game.site).toBe('lichess')
-    }).then(function (done) {
+    }).then((done) => {
         expect(done).toBe(true)
     })
 })

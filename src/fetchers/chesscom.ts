@@ -15,7 +15,7 @@ import {
 } from '../types'
 
 export function profile(username: string): Promise<Profile> {
-    return fetchFromEndpoint(`https://api.chess.com/pub/player/${username}`).then(async function (response) {
+    return fetchFromEndpoint(`https://api.chess.com/pub/player/${username}`).then(async (response) => {
         checkForServerError(response)
 
         let ratings = await stats(username)
@@ -61,7 +61,7 @@ export function playerGames(
 
                 for (let archiveUrl of orderedArchives) {
                     if (stopArchiveIteration) return
-                    await archive(archiveUrl).then(function (json) {
+                    await archive(archiveUrl).then((json) => {
                         let orderedGames: Array<ChessComGame> = json.games.reverse()
                         for (let game of orderedGames) {
                             if (params.since && game.end_time * 1000 < params.since) {
@@ -125,7 +125,7 @@ export function titledPlayers(
         for (let title of titles) {
             await fetchFromEndpoint(`https://api.chess.com/pub/titled/${title}`)
                 .then((response) => response.json())
-                .then(function (players: { players: string[] }) {
+                .then((players: { players: string[] }) => {
                     players.players.forEach((player) => (titledPlayers[player.toLowerCase()] = title))
                 })
         }
@@ -144,10 +144,10 @@ export function stats(username: string): Promise<ChesscomStats> {
 
 export function tournament(id: string): Promise<Tournament> {
     let url = `https://api.chess.com/pub/tournament/${id}`
-    return fetchFromEndpoint(url).then(function (response) {
+    return fetchFromEndpoint(url).then((response) => {
         checkForServerError(response)
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             response.json().then((data) => resolve(formatTournament(data)))
         })
     })
