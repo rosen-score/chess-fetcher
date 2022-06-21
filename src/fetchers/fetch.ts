@@ -51,6 +51,7 @@ function getMockServerEndpoint(url: string): string {
         'https://lichess.org/api/tournament/2oEh6hZw/games': '/ndjson/lichess/games',
         'https://lichess.org/api/swiss/48jrx3m6/games': '/ndjson/lichess/games',
 
+        'https://lichess.org/api/games/user/EricRosen?since=16557255145620': '/ndjson/lichess/games-with-since-filter',
         'https://lichess.org/api/games/user/user-with-no-games': '/ndjson/lichess/games-empty',
 
         'https://lichess.org/api/user/user404': '/status/404',

@@ -98,6 +98,33 @@ describe('fetching games', () => {
     })
 })
 
+describe('fetching games with params', () => {
+    test('of a lichess player', async () => {
+        expect.assertions(4)
+        await games(
+            'https://lichess.org/@/EricRosen',
+            (game) => {
+                expect(game.site).toBe('lichess')
+            },
+            {
+                since: 16557255145620,
+            }
+        )
+    })
+    test('of a chess.com player', async () => {
+        expect.assertions(3)
+        await games(
+            'https://www.chess.com/member/imrosen',
+            (game) => {
+                expect(game.site).toBe('chess.com')
+            },
+            {
+                since: 1651591721000,
+            }
+        )
+    })
+})
+
 describe('test invalid inputs', () => {
     test('for player', () => {
         expect(() => player('invalid-input')).toThrowError(

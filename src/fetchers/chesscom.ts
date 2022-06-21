@@ -45,10 +45,10 @@ export function archive(archiveUrl: string): Promise<ChessComArchive> {
 export function playerGames(
     username: string,
     callback: GameCallback,
-    filters: ChesscomGameParameters = {},
+    params: ChesscomGameParameters = {},
     titledPlayers: TitledPlayers = {}
 ): Promise<boolean> {
-    if (filters.since && filters.since.toString().length !== 13) {
+    if (params.since && params.since.toString().length !== 13) {
         throw new Error('Invalid timestamp format: Use milliseconds (13-digit timestamp)')
     }
 
@@ -63,7 +63,7 @@ export function playerGames(
                     await archive(archiveUrl).then(function (json) {
                         let orderedGames: Array<ChessComGame> = json.games.reverse()
                         for (let game of orderedGames) {
-                            if (filters.since && game.end_time * 1000 < filters.since) {
+                            if (params.since && game.end_time * 1000 < params.since) {
                                 stopArchiveIteration = true
                                 return
                             }
@@ -81,6 +81,7 @@ export function playerGames(
 export function tournamentGames(
     id: string,
     callback: GameCallback,
+    params: ChesscomGameParameters = {},
     titledPlayers: TitledPlayers = {}
 ): Promise<boolean> {
     return new Promise(async (resolve, reject) => {

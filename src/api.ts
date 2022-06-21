@@ -12,7 +12,7 @@ import {
     playerGames as chesscomPlayerGames,
     tournamentGames as chesscomTournamentGames,
 } from './fetchers/chesscom'
-import { GameCallback, Profile, Tournament } from './types'
+import { ChesscomGameParameters, GameCallback, LichessGameParameters, Profile, Tournament } from './types'
 
 /**
  * Fetch a player's profile (public info, rating, game stats)
@@ -57,21 +57,26 @@ export function tournament(url: string): Promise<Tournament> {
  *
  * @param url URL of what you want the games for. Can be (1) Lichess player, (2) Chess.com player, (3) Lichess tournament (arena or Swiss), or (4) Chess.com tournament (arena or Swiss)
  * @param callback Function to call for each game. The function will be passed a game object.
+ * @param params Optional parameters to pass to the API.
  * @returns Promise when all games are fetched
  */
-export function games(url: string, callback: GameCallback): Promise<boolean> {
+export function games(
+    url: string,
+    callback: GameCallback,
+    params: LichessGameParameters | ChesscomGameParameters = {}
+): Promise<boolean> {
     const id = url.substring(url.lastIndexOf('/') + 1)
 
     if (url.startsWith('https://lichess.org/@/')) {
-        return lichessPlayerGames(id, callback)
+        return lichessPlayerGames(id, callback, params)
     } else if (url.startsWith('https://www.chess.com/member/')) {
-        return chesscomPlayerGames(id, callback)
+        return chesscomPlayerGames(id, callback, params)
     } else if (url.startsWith('https://lichess.org/tournament')) {
-        return lichessArenaGames(id, callback)
+        return lichessArenaGames(id, callback, params)
     } else if (url.startsWith('https://lichess.org/swiss')) {
-        return lichessSwissGames(id, callback)
+        return lichessSwissGames(id, callback, params)
     } else if (url.startsWith('https://www.chess.com/tournament')) {
-        return chesscomTournamentGames(id, callback)
+        return chesscomTournamentGames(id, callback, params)
     }
 
     throw new Error('Must specify the URL to a Lichess or Chess.com player profile or tournament')

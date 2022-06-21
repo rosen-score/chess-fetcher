@@ -36,6 +36,19 @@ test('fetch player games', async () => {
     })
 })
 
+test('fetch player games with params', async () => {
+    expect.assertions(4)
+    await playerGames(
+        'EricRosen',
+        (game) => {
+            expect(game.site).toBe('lichess')
+        },
+        {
+            since: 16557255145620,
+        }
+    )
+})
+
 test('fetch player games of someone with no games', async () => {
     const callback = vi.fn(() => {})
     await playerGames('user-with-no-games', callback)
