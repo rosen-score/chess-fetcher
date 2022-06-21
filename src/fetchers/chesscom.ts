@@ -45,8 +45,7 @@ export function archive(archiveUrl: string): Promise<ChessComArchive> {
 export function playerGames(
     username: string,
     callback: GameCallback,
-    params: ChesscomGameParameters = {},
-    titledPlayers: TitledPlayers = {}
+    params: ChesscomGameParameters = {}
 ): Promise<boolean> {
     if (params.since && params.since.toString().length !== 13) {
         throw new Error('Invalid timestamp format: Use milliseconds (13-digit timestamp)')
@@ -55,6 +54,8 @@ export function playerGames(
     return new Promise((resolve, reject) => {
         archives(username)
             .then(async (archives) => {
+                let allTitledPlayers = await titledPlayers()
+
                 let stopArchiveIteration: boolean = false
                 let orderedArchives = archives.archives.reverse()
 
@@ -68,7 +69,7 @@ export function playerGames(
                                 return
                             }
 
-                            callback(formatGame(game, titledPlayers))
+                            callback(formatGame(game, allTitledPlayers))
                         }
                     })
                 }
@@ -81,11 +82,12 @@ export function playerGames(
 export function tournamentGames(
     id: string,
     callback: GameCallback,
-    params: ChesscomGameParameters = {},
-    titledPlayers: TitledPlayers = {}
+    params: ChesscomGameParameters = {}
 ): Promise<boolean> {
     return new Promise(async (resolve, reject) => {
         let url = `https://api.chess.com/pub/tournament/${id}`
+
+        let allTitledPlayers = await titledPlayers()
 
         await fetchFromEndpoint(url)
             .then((response) => {
@@ -104,7 +106,7 @@ export function tournamentGames(
                     .then((response) => response.json())
                     .then((data: ChessComArchive) => {
                         data.games.forEach((game) => {
-                            callback(formatGame(game, titledPlayers))
+                            callback(formatGame(game, allTitledPlayers))
                         })
                     })
             })
@@ -124,7 +126,7 @@ export function titledPlayers(
             await fetchFromEndpoint(`https://api.chess.com/pub/titled/${title}`)
                 .then((response) => response.json())
                 .then(function (players: { players: string[] }) {
-                    players.players.forEach((player) => (titledPlayers[player] = title))
+                    players.players.forEach((player) => (titledPlayers[player.toLowerCase()] = title))
                 })
         }
 

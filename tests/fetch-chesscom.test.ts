@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { describe, expect, test } from 'vitest'
 import {
     archive,
     archives,
@@ -9,6 +9,7 @@ import {
     tournament,
     tournamentGames,
 } from '../src/fetchers/chesscom'
+import { Game } from '../src/types'
 
 test('fetch player profile', async () => {
     expect.hasAssertions()
@@ -69,16 +70,19 @@ test('fetch player games w/ invalid filter', () => {
 test('fetch titled players', () => {
     return titledPlayers().then(function (players) {
         expect(players).toStrictEqual({
-            'player-CM': 'CM',
-            'player-FM': 'FM',
-            'player-GM': 'GM',
-            'player-IM': 'IM',
-            'player-NM': 'NM',
-            'player-WCM': 'WCM',
-            'player-WFM': 'WFM',
-            'player-WGM': 'WGM',
-            'player-WIM': 'WIM',
-            'player-WNM': 'WNM',
+            zhigalko_sergei: 'GM',
+            ajian: 'NM',
+            imrosen: 'IM',
+            'player-cm': 'CM',
+            'player-fm': 'FM',
+            'player-gm': 'GM',
+            'player-im': 'IM',
+            'player-nm': 'NM',
+            'player-wcm': 'WCM',
+            'player-wfm': 'WFM',
+            'player-wgm': 'WGM',
+            'player-wim': 'WIM',
+            'player-wnm': 'WNM',
         })
     })
 })
@@ -86,8 +90,10 @@ test('fetch titled players', () => {
 test('fetch titled players of a specific title', () => {
     return titledPlayers(['GM', 'IM']).then(function (players) {
         expect(players).toStrictEqual({
-            'player-GM': 'GM',
-            'player-IM': 'IM',
+            zhigalko_sergei: 'GM',
+            imrosen: 'IM',
+            'player-gm': 'GM',
+            'player-im': 'IM',
         })
     })
 })
@@ -126,6 +132,27 @@ test('fetch tournament games (swiss)', async () => {
         expect(game.site).toBe('chess.com')
     }).then(function (data) {
         expect(data).toBe(true)
+    })
+})
+
+describe('title is included with player info for games', () => {
+    test('of player', async () => {
+        expect.hasAssertions()
+
+        await playerGames('imrosen', function (game) {
+            expect([game.players.white.title, game.players.black.title]).toContain('IM')
+        })
+    })
+
+    test('of tournament', async () => {
+        let games: Array<Game> = []
+
+        await tournamentGames('late-titled-tuesday-blitz-june-07-2022-3192103', function (game) {
+            games.push(game)
+        })
+
+        expect(games[0].players.white.title).toBe('GM')
+        expect(games[0].players.black.title).toBe('NM')
     })
 })
 
