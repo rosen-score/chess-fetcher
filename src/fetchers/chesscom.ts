@@ -78,10 +78,7 @@ export function playerGames(
     })
 }
 
-export function tournamentGames(
-    id: string,
-    callback: GameCallback
-): Promise<boolean> {
+export function tournamentGames(id: string, callback: GameCallback): Promise<boolean> {
     return new Promise(async (resolve, reject) => {
         let url = `https://api.chess.com/pub/tournament/${id}`
 
