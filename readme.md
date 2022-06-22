@@ -47,7 +47,7 @@ games('https://lichess.org/@/DrNykterstein', 'lichess', (game) => {
 ## Installation
 
 ```bash
-npm install [tbd] # not published yet
+npm install @rosen-score/chess-fetcher # not published yet
 ```
 
 ## Development

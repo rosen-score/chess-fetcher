@@ -1,4 +1,5 @@
 {
+    "name": "@rosen-score/chess-fetcher",
     "scripts": {
         "coverage": "vitest run --coverage",
         "format": "prettier --write .",
