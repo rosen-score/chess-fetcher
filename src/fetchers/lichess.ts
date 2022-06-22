@@ -1,7 +1,7 @@
 import ndjson from 'fetch-ndjson'
 import { formatGame, formatProfile, formatTournament } from '../formatters/lichess'
 import { checkForServerError, fetchFromEndpoint } from './fetch'
-import { Game, GameCallback, LichessGameParameters, Profile, Tournament } from '../types'
+import { GameCallback, LichessGameParameters, Profile, Tournament } from '../types'
 
 export function qs(obj: Record<string, any>): string {
     let params = new URLSearchParams(obj).toString()

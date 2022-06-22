@@ -9,7 +9,6 @@ import {
     Title,
     TitledPlayers,
     Tournament,
-    Game,
     ChesscomStats,
     GameCallback,
 } from '../types'
@@ -20,7 +19,7 @@ export function profile(username: string): Promise<Profile> {
 
         let ratings = await stats(username)
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             response.json().then((data) => resolve(formatProfile(data, ratings)))
         })
     })
@@ -81,8 +80,7 @@ export function playerGames(
 
 export function tournamentGames(
     id: string,
-    callback: GameCallback,
-    params: ChesscomGameParameters = {}
+    callback: GameCallback
 ): Promise<boolean> {
     return new Promise(async (resolve, reject) => {
         let url = `https://api.chess.com/pub/tournament/${id}`
@@ -119,7 +117,7 @@ export function tournamentGames(
 export function titledPlayers(
     titles: Array<Title> = ['CM', 'FM', 'GM', 'IM', 'NM', 'WCM', 'WFM', 'WGM', 'WIM', 'WNM']
 ): Promise<TitledPlayers> {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
         let titledPlayers: TitledPlayers = {}
 
         for (let title of titles) {

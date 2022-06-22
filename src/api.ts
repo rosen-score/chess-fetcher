@@ -18,6 +18,7 @@ import { ChesscomGameParameters, GameCallback, LichessGameParameters, Profile, T
  * Fetch a player's profile (public info, rating, game stats)
  *
  * @param url URL of player profile (ex: https://lichess.org/@/DrNykterstein or https://chess.com/member/magnuscarlsen)
+ * @throws Error if the URL is invalid
  * @returns Promise of player profile
  */
 export function player(url: string): Promise<Profile> {
@@ -36,6 +37,7 @@ export function player(url: string): Promise<Profile> {
  * Fetch tournament info/stats
  *
  * @param url URL of tournament. Can be (1) Lichess arena, (2) Lichess Swiss, (3) Chess.com arena, or (4) Chess.com Swiss
+ * @throws Error if the URL is invalid
  * @returns Promise of tournament info
  */
 export function tournament(url: string): Promise<Tournament> {
@@ -58,6 +60,7 @@ export function tournament(url: string): Promise<Tournament> {
  * @param url URL of what you want the games for. Can be (1) Lichess player, (2) Chess.com player, (3) Lichess tournament (arena or Swiss), or (4) Chess.com tournament (arena or Swiss)
  * @param callback Function to call for each game. The function will be passed a game object.
  * @param params Optional parameters to pass to the API.
+ * @throws Error if the URL is invalid
  * @returns Promise when all games are fetched
  */
 export function games(
@@ -71,12 +74,12 @@ export function games(
         return lichessPlayerGames(id, callback, params)
     } else if (url.startsWith('https://www.chess.com/member/')) {
         return chesscomPlayerGames(id, callback, params)
-    } else if (url.startsWith('https://lichess.org/tournament')) {
+    } else if (url.startsWith('https://lichess.org/tournament/')) {
         return lichessArenaGames(id, callback, params)
-    } else if (url.startsWith('https://lichess.org/swiss')) {
+    } else if (url.startsWith('https://lichess.org/swiss/')) {
         return lichessSwissGames(id, callback, params)
-    } else if (url.startsWith('https://www.chess.com/tournament')) {
-        return chesscomTournamentGames(id, callback, params)
+    } else if (url.startsWith('https://www.chess.com/tournament/')) {
+        return chesscomTournamentGames(id, callback)
     }
 
     throw new Error('Must specify the URL to a Lichess or Chess.com player profile or tournament')

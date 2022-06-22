@@ -137,7 +137,7 @@ describe('test invalid inputs', () => {
     })
 
     test('for games', () => {
-        expect(() => games('invalid', (game) => {})).toThrowError(
+        expect(() => games('invalid', () => {})).toThrowError(
             'Must specify the URL to a Lichess or Chess.com player profile or tournament'
         )
     })
