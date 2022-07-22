@@ -62,3 +62,15 @@ npm install
 # Run the test suite
 npm run test
 ```
+
+### Check with SonarQube
+
+```bash
+docker-compose -f docker-compose.sonar.yml up -d
+```
+
+That starts the SonarQube dashboard at http://localhost:9000/ (login: admin/admin)
+
+```bash
+npx ts-node sonar-project.ts
+```

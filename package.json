@@ -6,6 +6,7 @@
         "format": "prettier --write .",
         "format-ci": "prettier --check .",
         "mock-server": "ts-node tests/mock-server/server.ts",
+        "sonarqube": "ts-node sonar-project.ts",
         "test": "vitest run",
         "watch": "vitest"
     },
@@ -14,6 +15,7 @@
         "c8": "^7.11.3",
         "fastify": "^4.0.0",
         "prettier": "^2.6.2",
+        "sonarqube-scanner": "^2.8.1",
         "ts-node": "^10.8.0",
         "typescript": "^4.6.4",
         "vitest": "^0.18.0"
