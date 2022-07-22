@@ -17,6 +17,7 @@ import {
     ChesscomStats,
     ChessComPlayer,
 } from '../types'
+import { getResultStringForColor } from './utils'
 
 export function formatTournament(json: ChessComTournament): Tournament {
     const id = json.url.substring(json.url.lastIndexOf('/') + 1)
@@ -110,25 +111,25 @@ export function getResult(json: PartialDeep<ChessComGame>): Result {
                 return {
                     winner: swapColor(color),
                     via: 'checkmate',
-                    label: swapColor(color) === 'white' ? '1-0' : '0-1',
+                    label: getResultStringForColor(swapColor(color)),
                 }
             case 'resigned':
                 return {
                     winner: swapColor(color),
                     via: 'resignation',
-                    label: swapColor(color) === 'white' ? '1-0' : '0-1',
+                    label: getResultStringForColor(swapColor(color)),
                 }
             case 'timeout':
                 return {
                     winner: swapColor(color),
                     via: 'timeout',
-                    label: swapColor(color) === 'white' ? '1-0' : '0-1',
+                    label: getResultStringForColor(swapColor(color)),
                 }
             case 'abandoned':
                 return {
                     winner: swapColor(color),
                     via: 'abandonment',
-                    label: swapColor(color) === 'white' ? '1-0' : '0-1',
+                    label: getResultStringForColor(swapColor(color)),
                 }
             case 'bughousepartnerlose':
             case 'kingofthehill':
@@ -136,7 +137,7 @@ export function getResult(json: PartialDeep<ChessComGame>): Result {
                 return {
                     winner: swapColor(color),
                     via: 'variant',
-                    label: swapColor(color) === 'white' ? '1-0' : '0-1',
+                    label: getResultStringForColor(swapColor(color)),
                 }
         }
     }

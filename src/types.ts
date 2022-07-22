@@ -31,7 +31,7 @@ export type LichessGameParameters = {
         | 'kingOfTheHill'
         | 'racingKings'
         | 'threeCheck'
-    color?: 'white' | 'black'
+    color?: ChessColor
     analysed?: boolean
     moves?: boolean
     pgnInJson?: boolean
@@ -391,8 +391,10 @@ export interface Result {
         | 'noStart' // Did not make a move
         | '50moves'
         | 'variant' // For example, threecheck or bughousepartnerlose
-    label: '1-0' | '0-1' | '½-½' | '*'
+    label: GameResultString
 }
+
+export type GameResultString = '1-0' | '0-1' | '½-½' | '*'
 
 export interface Profile {
     site: 'lichess' | 'chess.com'

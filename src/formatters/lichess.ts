@@ -11,6 +11,7 @@ import {
     LichessTimeControl,
     LichessGame,
 } from '../types'
+import { getResultStringForColor } from './utils'
 
 export function formatTournament(json: LichessArena | LichessSwiss): Tournament {
     if ('nbRounds' in json) {
@@ -87,37 +88,37 @@ export function getResult(json: Partial<LichessGame>): Result {
             return {
                 winner: json.winner,
                 via: 'checkmate',
-                label: json.winner === 'white' ? '1-0' : '0-1',
+                label: getResultStringForColor(json.winner),
             }
         case 'resign':
             return {
                 winner: json.winner,
                 via: 'resignation',
-                label: json.winner === 'white' ? '1-0' : '0-1',
+                label: getResultStringForColor(json.winner),
             }
         case 'outoftime':
             return {
                 winner: json.winner,
                 via: 'timeout',
-                label: json.winner === 'white' ? '1-0' : '0-1',
+                label: getResultStringForColor(json.winner),
             }
         case 'timeout':
             return {
                 winner: json.winner,
                 via: 'abandonment',
-                label: json.winner === 'white' ? '1-0' : '0-1',
+                label: getResultStringForColor(json.winner),
             }
         case 'noStart':
             return {
                 winner: json.winner,
                 via: 'noStart',
-                label: json.winner === 'white' ? '1-0' : '0-1',
+                label: getResultStringForColor(json.winner),
             }
         case 'variantEnd':
             return {
                 winner: json.winner,
                 via: 'variant',
-                label: json.winner === 'white' ? '1-0' : '0-1',
+                label: getResultStringForColor(json.winner),
             }
         case 'draw':
             return {
