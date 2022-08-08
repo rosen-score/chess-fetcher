@@ -1,0 +1,141 @@
+{
+    "games": [
+        {
+            "url": "https://www.chess.com/game/live/48374439715",
+            "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2022.06.07\"]\n[Round \"-\"]\n[White \"Zhigalko_Sergei\"]\n[Black \"ajian\"]\n[Result \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103\"]\n[CurrentPosition \"r4rk1/pp1b2pB/1qn1pb2/3p3Q/1P1P4/P1N1B3/5PPP/R4RK1 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"B22\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-Alapin-Variation-2...e6-3.Nf3\"]\n[UTCDate \"2022.06.07\"]\n[UTCTime \"20:59:58\"]\n[WhiteElo \"2920\"]\n[BlackElo \"2481\"]\n[TimeControl \"180+1\"]\n[Termination \"Zhigalko_Sergei won by resignation\"]\n[StartTime \"20:59:58\"]\n[EndDate \"2022.06.07\"]\n[EndTime \"21:02:28\"]\n[Link \"https://www.chess.com/game/live/48374439715\"]\n\n1. e4 {[%clk 0:03:00.9]} 1... c5 {[%clk 0:02:59]} 2. Nf3 {[%clk 0:03:01]} 2... e6 {[%clk 0:02:59.1]} 3. c3 {[%clk 0:03:01.3]} 3... d5 {[%clk 0:02:58.5]} 4. e5 {[%clk 0:03:01.7]} 4... Nc6 {[%clk 0:02:56]} 5. d4 {[%clk 0:03:01.7]} 5... Qb6 {[%clk 0:02:51.2]} 6. a3 {[%clk 0:03:01.6]} 6... Nge7 {[%clk 0:02:43.9]} 7. b4 {[%clk 0:03:01.4]} 7... cxd4 {[%clk 0:02:43.6]} 8. cxd4 {[%clk 0:03:02.3]} 8... Nf5 {[%clk 0:02:39.9]} 9. Be3 {[%clk 0:03:02.4]} 9... Be7 {[%clk 0:02:38.1]} 10. Bd3 {[%clk 0:03:02.2]} 10... O-O {[%clk 0:02:33]} 11. O-O {[%clk 0:03:01.4]} 11... Bd7 {[%clk 0:02:25]} 12. Nc3 {[%clk 0:02:51.9]} 12... Nh4 {[%clk 0:01:59.4]} 13. Nxh4 {[%clk 0:02:49.3]} 13... Bxh4 {[%clk 0:02:00.3]} 14. Qh5 {[%clk 0:02:46.2]} 14... f5 {[%clk 0:01:40.2]} 15. exf6 {[%clk 0:02:34.5]} 15... Bxf6 {[%clk 0:01:36.8]} 16. Bxh7+ {[%clk 0:02:34.3]} 1-0\n",
+            "time_control": "180+1",
+            "end_time": 1654635748,
+            "rated": true,
+            "fen": "r4rk1/pp1b2pB/1qn1pb2/3p3Q/1P1P4/P1N1B3/5PPP/R4RK1 b - -",
+            "time_class": "blitz",
+            "rules": "chess",
+            "white": {
+                "rating": 2920,
+                "result": "win",
+                "@id": "https://api.chess.com/pub/player/zhigalko_sergei",
+                "username": "Zhigalko_Sergei",
+                "uuid": "52cc854e-cd94-11e5-8024-000000000000"
+            },
+            "black": {
+                "rating": 2481,
+                "result": "resigned",
+                "@id": "https://api.chess.com/pub/player/ajian",
+                "username": "ajian",
+                "uuid": "54863268-3439-11df-800d-000000000000"
+            },
+            "eco": "https://www.chess.com/openings/Sicilian-Defense-Alapin-Variation-2...e6-3.Nf3",
+            "tournament": "https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103"
+        },
+        {
+            "url": "https://www.chess.com/game/live/48374439841",
+            "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2022.06.07\"]\n[Round \"-\"]\n[White \"Nikolakis2014\"]\n[Black \"schondeln\"]\n[Result \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103\"]\n[CurrentPosition \"r4rk1/pn1qbppp/2N1p3/3B4/1p1P1B2/8/PP3PPP/2RQR1K1 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"D02\"]\n[ECOUrl \"https://www.chess.com/openings/Queens-Pawn-Opening-Zukertort-Variation\"]\n[UTCDate \"2022.06.07\"]\n[UTCTime \"21:00:00\"]\n[WhiteElo \"2704\"]\n[BlackElo \"2382\"]\n[TimeControl \"180+1\"]\n[Termination \"Nikolakis2014 won by resignation\"]\n[StartTime \"21:00:00\"]\n[EndDate \"2022.06.07\"]\n[EndTime \"21:02:36\"]\n[Link \"https://www.chess.com/game/live/48374439841\"]\n\n1. Nf3 {[%clk 0:03:00.3]} 1... d5 {[%clk 0:02:53.4]} 2. d4 {[%clk 0:03:00.2]} 2... Nf6 {[%clk 0:02:52.7]} 3. c4 {[%clk 0:03:00]} 3... c6 {[%clk 0:02:52.2]} 4. Nc3 {[%clk 0:02:59.5]} 4... dxc4 {[%clk 0:02:51.5]} 5. e4 {[%clk 0:02:58.4]} 5... b5 {[%clk 0:02:50.1]} 6. Be2 {[%clk 0:02:58.7]} 6... b4 {[%clk 0:02:46.2]} 7. Na4 {[%clk 0:02:57.7]} 7... Nxe4 {[%clk 0:02:45.7]} 8. O-O {[%clk 0:02:57]} 8... e6 {[%clk 0:02:43.9]} 9. Bxc4 {[%clk 0:02:56.5]} 9... Be7 {[%clk 0:02:43.2]} 10. Re1 {[%clk 0:02:56.1]} 10... Nd6 {[%clk 0:02:32.2]} 11. Bb3 {[%clk 0:02:51.5]} 11... Nd7 {[%clk 0:02:32]} 12. Bf4 {[%clk 0:02:45.5]} 12... O-O {[%clk 0:02:23.5]} 13. Rc1 {[%clk 0:02:43.1]} 13... Nf6 {[%clk 0:02:09.4]} 14. Ne5 {[%clk 0:02:40]} 14... Bb7 {[%clk 0:02:05]} 15. Nc5 {[%clk 0:02:39.3]} 15... Nd5 {[%clk 0:02:00.7]} 16. Nxb7 {[%clk 0:02:27.1]} 16... Nxb7 {[%clk 0:01:59.4]} 17. Nxc6 {[%clk 0:02:27.1]} 17... Qd7 {[%clk 0:01:47.1]} 18. Bxd5 {[%clk 0:02:25.9]} 1-0\n",
+            "time_control": "180+1",
+            "end_time": 1654635756,
+            "rated": true,
+            "fen": "r4rk1/pn1qbppp/2N1p3/3B4/1p1P1B2/8/PP3PPP/2RQR1K1 b - -",
+            "time_class": "blitz",
+            "rules": "chess",
+            "white": {
+                "rating": 2704,
+                "result": "win",
+                "@id": "https://api.chess.com/pub/player/nikolakis2014",
+                "username": "Nikolakis2014",
+                "uuid": "b494ab4e-c416-11e5-805e-000000000000"
+            },
+            "black": {
+                "rating": 2382,
+                "result": "resigned",
+                "@id": "https://api.chess.com/pub/player/schondeln",
+                "username": "schondeln",
+                "uuid": "c5242924-35b5-11eb-bed0-eb33725921d4"
+            },
+            "eco": "https://www.chess.com/openings/Queens-Pawn-Opening-Zukertort-Variation",
+            "tournament": "https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103"
+        },
+        {
+            "url": "https://www.chess.com/game/live/48374439673",
+            "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2022.06.07\"]\n[Round \"-\"]\n[White \"jefferyx\"]\n[Black \"profaVa\"]\n[Result \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103\"]\n[CurrentPosition \"r1bk1b1r/ppN2ppp/4n3/5B2/8/6Pq/PPP2P1P/R1BQR1K1 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"C47\"]\n[ECOUrl \"https://www.chess.com/openings/Four-Knights-Game-Scotch-Accepted-Schmid-Defense\"]\n[UTCDate \"2022.06.07\"]\n[UTCTime \"20:59:59\"]\n[WhiteElo \"3028\"]\n[BlackElo \"2516\"]\n[TimeControl \"180+1\"]\n[Termination \"jefferyx won by resignation\"]\n[StartTime \"20:59:59\"]\n[EndDate \"2022.06.07\"]\n[EndTime \"21:03:06\"]\n[Link \"https://www.chess.com/game/live/48374439673\"]\n\n1. e4 {[%clk 0:03:00.6]} 1... e5 {[%clk 0:02:58.5]} 2. Nf3 {[%clk 0:03:00.9]} 2... Nc6 {[%clk 0:02:58.4]} 3. Nc3 {[%clk 0:03:01.6]} 3... Nf6 {[%clk 0:02:57.8]} 4. d4 {[%clk 0:03:02.2]} 4... exd4 {[%clk 0:02:57.7]} 5. Nxd4 {[%clk 0:03:03.1]} 5... Nxe4 {[%clk 0:02:57.9]} 6. Nxe4 {[%clk 0:03:03]} 6... Qe7 {[%clk 0:02:57.3]} 7. Bd3 {[%clk 0:03:03.6]} 7... Nxd4 {[%clk 0:02:55.7]} 8. O-O {[%clk 0:03:04.2]} 8... Ne6 {[%clk 0:02:39.7]} 9. Re1 {[%clk 0:03:02.3]} 9... d5 {[%clk 0:02:35.2]} 10. Ng3 {[%clk 0:03:02.6]} 10... Qf6 {[%clk 0:02:24.3]} 11. Nh5 {[%clk 0:02:53.6]} 11... Qh4 {[%clk 0:02:20.8]} 12. g3 {[%clk 0:02:36.3]} 12... Qh3 {[%clk 0:02:06.9]} 13. Nf4 {[%clk 0:02:32.1]} 13... Qh6 {[%clk 0:01:31.1]} 14. Nxd5 {[%clk 0:02:30.2]} 14... Qh3 {[%clk 0:01:20.7]} 15. Nxc7+ {[%clk 0:02:28.4]} 15... Kd8 {[%clk 0:01:20.2]} 16. Bf5+ {[%clk 0:02:18.2]} 1-0\n",
+            "time_control": "180+1",
+            "end_time": 1654635786,
+            "rated": true,
+            "fen": "r1bk1b1r/ppN2ppp/4n3/5B2/8/6Pq/PPP2P1P/R1BQR1K1 b - -",
+            "time_class": "blitz",
+            "rules": "chess",
+            "white": {
+                "rating": 3028,
+                "result": "win",
+                "@id": "https://api.chess.com/pub/player/jefferyx",
+                "username": "jefferyx",
+                "uuid": "562a009c-a252-11e2-801e-000000000000"
+            },
+            "black": {
+                "rating": 2516,
+                "result": "resigned",
+                "@id": "https://api.chess.com/pub/player/profava",
+                "username": "profaVa",
+                "uuid": "befd6a30-5284-11e9-8d0e-014c2c7c3940"
+            },
+            "eco": "https://www.chess.com/openings/Four-Knights-Game-Scotch-Accepted-Schmid-Defense",
+            "tournament": "https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103"
+        },
+        {
+            "url": "https://www.chess.com/game/live/48374439843",
+            "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2022.06.07\"]\n[Round \"-\"]\n[White \"Caisachess\"]\n[Black \"juanarmandorohl\"]\n[Result \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103\"]\n[CurrentPosition \"5r2/2p2p1k/5p1p/4pP2/Pq1bP1Q1/7P/PpB2P1K/6R1 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"C50\"]\n[ECOUrl \"https://www.chess.com/openings/Giuoco-Piano-Game-Giuoco-Pianissimo-Variation-4...Nf6\"]\n[UTCDate \"2022.06.07\"]\n[UTCTime \"21:00:04\"]\n[WhiteElo \"2395\"]\n[BlackElo \"2660\"]\n[TimeControl \"180+1\"]\n[Termination \"Caisachess won by resignation\"]\n[StartTime \"21:00:04\"]\n[EndDate \"2022.06.07\"]\n[EndTime \"21:03:22\"]\n[Link \"https://www.chess.com/game/live/48374439843\"]\n\n1. e4 {[%clk 0:03:00.9]} 1... e5 {[%clk 0:02:59.2]} 2. Nf3 {[%clk 0:02:59]} 2... Nc6 {[%clk 0:02:59.6]} 3. Bc4 {[%clk 0:02:59.4]} 3... Nf6 {[%clk 0:02:59.3]} 4. d3 {[%clk 0:02:58.7]} 4... Bc5 {[%clk 0:02:59.6]} 5. c3 {[%clk 0:02:55.8]} 5... O-O {[%clk 0:02:59.4]} 6. Bb3 {[%clk 0:02:56.3]} 6... d5 {[%clk 0:02:59.5]} 7. Nbd2 {[%clk 0:02:54.2]} 7... a5 {[%clk 0:02:59.4]} 8. O-O {[%clk 0:02:53.8]} 8... Bg4 {[%clk 0:02:56.7]} 9. h3 {[%clk 0:02:52.7]} 9... dxe4 {[%clk 0:02:55.5]} 10. dxe4 {[%clk 0:02:51.4]} 10... Bh5 {[%clk 0:02:55.3]} 11. g4 {[%clk 0:02:44.2]} 11... Bg6 {[%clk 0:02:51.9]} 12. Qe2 {[%clk 0:02:44.6]} 12... a4 {[%clk 0:02:51.7]} 13. Bc2 {[%clk 0:02:42.7]} 13... Qe7 {[%clk 0:02:50.9]} 14. Nc4 {[%clk 0:02:39.6]} 14... b5 {[%clk 0:02:42.5]} 15. Ne3 {[%clk 0:02:36]} 15... b4 {[%clk 0:02:42.5]} 16. Nf5 {[%clk 0:02:29.4]} 16... Bxf5 {[%clk 0:02:38.3]} 17. gxf5 {[%clk 0:02:17.4]} 17... a3 {[%clk 0:02:36.8]} 18. bxa3 {[%clk 0:02:06.3]} 18... bxc3 {[%clk 0:02:34.5]} 19. Bg5 {[%clk 0:02:06.1]} 19... Nd4 {[%clk 0:02:32.8]} 20. Nxd4 {[%clk 0:02:04.3]} 20... Bxd4 {[%clk 0:02:33.7]} 21. a4 {[%clk 0:02:00.2]} 21... h6 {[%clk 0:02:29.2]} 22. Bh4 {[%clk 0:01:58.4]} 22... Rab8 {[%clk 0:02:28.1]} 23. Rab1 {[%clk 0:01:57.1]} 23... Rb2 {[%clk 0:02:27.3]} 24. Rxb2 {[%clk 0:01:45.7]} 24... cxb2 {[%clk 0:02:28.2]} 25. Kh2 {[%clk 0:01:42.1]} 25... Qb4 {[%clk 0:02:22.9]} 26. Bxf6 {[%clk 0:01:37.8]} 26... gxf6 {[%clk 0:02:23.1]} 27. Rg1+ {[%clk 0:01:38.4]} 27... Kh7 {[%clk 0:02:22.8]} 28. Qg4 {[%clk 0:01:36.9]} 1-0\n",
+            "time_control": "180+1",
+            "end_time": 1654635802,
+            "rated": true,
+            "fen": "5r2/2p2p1k/5p1p/4pP2/Pq1bP1Q1/7P/PpB2P1K/6R1 b - -",
+            "time_class": "blitz",
+            "rules": "chess",
+            "white": {
+                "rating": 2395,
+                "result": "win",
+                "@id": "https://api.chess.com/pub/player/caisachess",
+                "username": "Caisachess",
+                "uuid": "98014922-e169-11e5-801c-000000000000"
+            },
+            "black": {
+                "rating": 2660,
+                "result": "resigned",
+                "@id": "https://api.chess.com/pub/player/juanarmandorohl",
+                "username": "juanarmandorohl",
+                "uuid": "be57ba9a-8b4f-11ea-a7f6-59fe565e93d4"
+            },
+            "eco": "https://www.chess.com/openings/Giuoco-Piano-Game-Giuoco-Pianissimo-Variation-4...Nf6",
+            "tournament": "https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103"
+        },
+        {
+            "url": "https://www.chess.com/game/live/48374439723",
+            "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2022.06.07\"]\n[Round \"-\"]\n[White \"Eliwood44\"]\n[Black \"dropstoneDP\"]\n[Result \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103\"]\n[CurrentPosition \"5rk1/pp3pbp/n5p1/5q2/2RP4/1P3QB1/P4PPP/6K1 w - -\"]\n[Timezone \"UTC\"]\n[ECO \"A45\"]\n[ECOUrl \"https://www.chess.com/openings/Indian-Game\"]\n[UTCDate \"2022.06.07\"]\n[UTCTime \"21:00:05\"]\n[WhiteElo \"2475\"]\n[BlackElo \"2911\"]\n[TimeControl \"180+1\"]\n[Termination \"dropstoneDP won by resignation\"]\n[StartTime \"21:00:05\"]\n[EndDate \"2022.06.07\"]\n[EndTime \"21:03:53\"]\n[Link \"https://www.chess.com/game/live/48374439723\"]\n\n1. d4 {[%clk 0:02:56.5]} 1... Nf6 {[%clk 0:02:59.5]} 2. Bf4 {[%clk 0:02:53.9]} 2... g6 {[%clk 0:02:58.4]} 3. Nc3 {[%clk 0:02:53.9]} 3... d5 {[%clk 0:02:57.7]} 4. e3 {[%clk 0:02:52.3]} 4... Bg7 {[%clk 0:02:55.7]} 5. Nb5 {[%clk 0:02:46.9]} 5... Na6 {[%clk 0:02:54.7]} 6. c4 {[%clk 0:02:47]} 6... O-O {[%clk 0:02:51.8]} 7. Nf3 {[%clk 0:02:43.6]} 7... c5 {[%clk 0:02:48.1]} 8. Be2 {[%clk 0:02:39.9]} 8... dxc4 {[%clk 0:02:43.4]} 9. O-O {[%clk 0:02:38.5]} 9... cxd4 {[%clk 0:02:41.6]} 10. Nfxd4 {[%clk 0:02:33.4]} 10... Nd5 {[%clk 0:02:41]} 11. Bg3 {[%clk 0:02:31.9]} 11... Nb6 {[%clk 0:02:38]} 12. Rc1 {[%clk 0:02:22.8]} 12... Bd7 {[%clk 0:02:36.7]} 13. Bxc4 {[%clk 0:01:54]} 13... Nxc4 {[%clk 0:02:31.7]} 14. Rxc4 {[%clk 0:01:54.9]} 14... e5 {[%clk 0:02:31.6]} 15. Nd6 {[%clk 0:01:35.8]} 15... exd4 {[%clk 0:02:30]} 16. exd4 {[%clk 0:01:26.3]} 16... Qb6 {[%clk 0:02:28.9]} 17. Qf3 {[%clk 0:01:18.7]} 17... Bb5 {[%clk 0:02:22.1]} 18. Nxb5 {[%clk 0:01:16.3]} 18... Qxb5 {[%clk 0:02:23]} 19. b3 {[%clk 0:01:17]} 19... Rac8 {[%clk 0:02:19.8]} 20. Rfc1 {[%clk 0:01:15.1]} 20... Rxc4 {[%clk 0:02:19.2]} 21. Rxc4 {[%clk 0:01:16]} 21... Qf5 {[%clk 0:02:07.2]} 0-1\n",
+            "time_control": "180+1",
+            "end_time": 1654635833,
+            "rated": true,
+            "fen": "5rk1/pp3pbp/n5p1/5q2/2RP4/1P3QB1/P4PPP/6K1 w - -",
+            "time_class": "blitz",
+            "rules": "chess",
+            "white": {
+                "rating": 2475,
+                "result": "resigned",
+                "@id": "https://api.chess.com/pub/player/eliwood44",
+                "username": "Eliwood44",
+                "uuid": "f94ef4d2-97d3-11e2-8044-000000000000"
+            },
+            "black": {
+                "rating": 2911,
+                "result": "win",
+                "@id": "https://api.chess.com/pub/player/dropstonedp",
+                "username": "dropstoneDP",
+                "uuid": "37f4ea8a-1c33-11ea-8ed3-2744cbd46551"
+            },
+            "eco": "https://www.chess.com/openings/Indian-Game",
+            "tournament": "https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103"
+        }
+    ],
+    "players": [
+        { "username": "hikaru", "points": 10, "is_winner": true },
+        { "username": "tiriricas", "points": 1, "is_winner": false },
+        { "username": "laico", "points": 4, "is_winner": false },
+        { "username": "tst2014", "points": 6.5, "is_winner": false },
+        { "username": "albayo", "points": 4, "is_winner": false }
+    ]
+}

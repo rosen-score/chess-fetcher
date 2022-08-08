@@ -1,0 +1,17 @@
+{
+    "avatar": "https://images.chesscomfiles.com/uploads/v1/user/6555034.34809e6e.200x200o.1c01f0714b85.jpeg",
+    "player_id": 6555034,
+    "@id": "https://api.chess.com/pub/player/imrosen",
+    "url": "https://www.chess.com/member/IMRosen",
+    "name": "Eric Rosen",
+    "username": "imrosen",
+    "title": "IM",
+    "followers": 6007,
+    "country": "https://api.chess.com/pub/country/US",
+    "location": "St. Louis",
+    "last_online": 1654340204,
+    "joined": 1327467686,
+    "status": "premium",
+    "is_streamer": false,
+    "verified": false
+}

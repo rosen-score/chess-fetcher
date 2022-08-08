@@ -1,0 +1,7 @@
+readme.md
+todo.md
+dist
+tests/mock-server/data/lichess/ericrosen.ndjson
+
+coverage
+node_modules

@@ -1,0 +1,160 @@
+{
+    "nbPlayers": 8907,
+    "duels": [],
+    "isFinished": true,
+    "podium": [
+        {
+            "name": "Zhigalko_Sergei",
+            "rank": 1,
+            "rating": 2870,
+            "score": 226,
+            "sheet": { "fire": true },
+            "title": "GM",
+            "nb": { "game": 64, "berserk": 55, "win": 52 },
+            "performance": 2757
+        },
+        {
+            "name": "Chessar08",
+            "rank": 2,
+            "rating": 2668,
+            "score": 217,
+            "sheet": { "fire": true },
+            "nb": { "game": 68, "berserk": 65, "win": 52 },
+            "performance": 2646
+        },
+        {
+            "name": "john-orlando99",
+            "rank": 3,
+            "rating": 2389,
+            "score": 170,
+            "sheet": { "fire": true },
+            "nb": { "game": 76, "berserk": 62, "win": 45 },
+            "performance": 2461
+        }
+    ],
+    "pairingsClosed": true,
+    "stats": {
+        "games": 35401,
+        "moves": 2473778,
+        "whiteWins": 17475,
+        "blackWins": 16395,
+        "draws": 1531,
+        "berserks": 16515,
+        "averageRating": 1724
+    },
+    "standing": {
+        "page": 1,
+        "players": [
+            {
+                "name": "Zhigalko_Sergei",
+                "rank": 1,
+                "rating": 2870,
+                "score": 226,
+                "sheet": {
+                    "scores": "5533233054544555555523254553323304331105331032555555555554533033",
+                    "fire": true
+                },
+                "title": "GM"
+            },
+            {
+                "name": "Chessar08",
+                "rank": 2,
+                "rating": 2668,
+                "score": 217,
+                "sheet": {
+                    "scores": "43305553311300555533030553305533003313033053305555330255555555554533",
+                    "fire": true
+                }
+            },
+            {
+                "name": "john-orlando99",
+                "rank": 3,
+                "rating": 2389,
+                "score": 170,
+                "sheet": {
+                    "scores": "5330003030555330030055230005230454330033233010005553300023300555330033033233",
+                    "fire": true
+                }
+            },
+            {
+                "name": "IKK_2022",
+                "rank": 4,
+                "rating": 2472,
+                "score": 166,
+                "sheet": {
+                    "scores": "03055330013032233053303003303053300033033103023000233033033031054532055553300303"
+                }
+            },
+            {
+                "name": "Brrrrrrrr",
+                "rank": 5,
+                "rating": 2792,
+                "score": 164,
+                "sheet": {
+                    "scores": "022244452200012030433031305522104320443224454442204444444454320"
+                },
+                "title": "GM"
+            },
+            {
+                "name": "Hovik7",
+                "rank": 6,
+                "rating": 2651,
+                "score": 149,
+                "sheet": {
+                    "scores": "005533005533030303033003130030255532020533055320555555330330"
+                },
+                "title": "GM"
+            },
+            {
+                "name": "No_Move_Left",
+                "rank": 7,
+                "rating": 2522,
+                "score": 146,
+                "sheet": {
+                    "scores": "305330053305533101300233253300533100555522005230331032555330"
+                }
+            },
+            {
+                "name": "MeikeSchlecker",
+                "rank": 8,
+                "rating": 2250,
+                "score": 143,
+                "sheet": {
+                    "scores": "1000000300000033100000003030305331000030053303105330023303000000013001032330300003033030005533000253305330"
+                }
+            },
+            {
+                "name": "KingdomsDisdained",
+                "rank": 9,
+                "rating": 2417,
+                "score": 139,
+                "sheet": {
+                    "scores": "00000300030003055330053305533005330555330233103033030032330455522"
+                }
+            },
+            {
+                "name": "TheBigGreek",
+                "rank": 10,
+                "rating": 2698,
+                "score": 137,
+                "sheet": {
+                    "scores": "5533024444442200422112120031204222454444220244444432",
+                    "fire": true
+                },
+                "title": "IM"
+            }
+        ]
+    },
+    "id": "2oEh6hZw",
+    "createdBy": "lichess",
+    "startsAt": "2022-03-16T17:00:33.000Z",
+    "system": "arena",
+    "fullName": "Yearly Blitz Arena",
+    "minutes": 360,
+    "perf": { "key": "blitz", "name": "Blitz", "icon": ")" },
+    "clock": { "limit": 300, "increment": 0 },
+    "variant": "standard",
+    "berserkable": true,
+    "verdicts": { "list": [], "accepted": true },
+    "schedule": { "freq": "yearly", "speed": "blitz" }
+}

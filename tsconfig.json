@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "lib": ["DOM", "es2015"],
+        "moduleResolution": "node",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "dist",
+        "sourceMap": true,
+        "strict": true,
+        "target": "es6"
+    },
+    "include": ["src/**/*"]
+}
