@@ -1,5 +1,5 @@
 import { expect, test, vi } from 'vitest'
-import { profile, arena, swiss, playerGames, arenaGames, swissGames, qs } from '../src/fetchers/lichess'
+import { profile, arena, swiss, playerGames, arenaGames, swissGames, qs, games } from '../src/fetchers/lichess'
 
 test('fetch player', async () => {
     expect.hasAssertions()
@@ -71,6 +71,15 @@ test('fetch swiss games', async () => {
     }).then((done) => {
         expect(done).toBe(true)
     })
+})
+
+test('games', async () => {
+    expect(
+        games(
+            'https://lichess.org/api/games/user/EricRosen',
+            vi.fn(() => {})
+        )
+    ).resolves.toBe(true)
 })
 
 test('not found', async () => {

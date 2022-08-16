@@ -18,11 +18,11 @@ export function profile(username: string): Promise<Profile> {
     })
 }
 
-export function arena(id: string): Promise<Tournament> {
+export function arena(id: string) {
     return tournament(`https://lichess.org/api/tournament/${id}`)
 }
 
-export function swiss(id: string): Promise<Tournament> {
+export function swiss(id: string) {
     return tournament(`https://lichess.org/api/swiss/${id}`)
 }
 
@@ -36,23 +36,19 @@ function tournament(url: string): Promise<Tournament> {
     })
 }
 
-export function playerGames(
-    username: string,
-    callback: GameCallback,
-    params: LichessGameParameters = {}
-): Promise<boolean> {
+export function playerGames(username: string, callback: GameCallback, params: LichessGameParameters = {}) {
     return games(`https://lichess.org/api/games/user/${username}`, callback, params)
 }
 
-export function arenaGames(id: string, callback: GameCallback, params: LichessGameParameters = {}): Promise<boolean> {
+export function arenaGames(id: string, callback: GameCallback, params: LichessGameParameters = {}) {
     return games(`https://lichess.org/api/tournament/${id}/games`, callback, params)
 }
 
-export function swissGames(id: string, callback: GameCallback, params: LichessGameParameters = {}): Promise<boolean> {
+export function swissGames(id: string, callback: GameCallback, params: LichessGameParameters = {}) {
     return games(`https://lichess.org/api/swiss/${id}/games`, callback, params)
 }
 
-async function games(url: string, callback: GameCallback, params: LichessGameParameters = {}): Promise<boolean> {
+export async function games(url: string, callback: GameCallback, params: LichessGameParameters = {}): Promise<boolean> {
     let response = await fetchFromEndpoint(url + qs(params), {
         headers: {
             Accept: 'application/x-ndjson',

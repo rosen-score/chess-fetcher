@@ -14,20 +14,20 @@ jobs:
             - run: npm ci
             - run: npm test
 
-    # code-coverage:
-    #     runs-on: ubuntu-latest
-    #     timeout-minutes: 1
-    #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: actions/setup-node@v3
-    #           with:
-    #               node-version: 'latest'
-    #         - run: npm ci
-    #         - run: npm run coverage
-    #         # - name: Upload coverage to Codecov
-    #         #   uses: codecov/codecov-action@v3.1.0
-    #         #   with:
-    #         #       fail_ci_if_error: true
+    code-coverage:
+        runs-on: ubuntu-latest
+        timeout-minutes: 1
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 'latest'
+            - run: npm ci
+            - run: npm run coverage
+            # - name: Upload coverage to Codecov
+            #   uses: codecov/codecov-action@v3.1.0
+            #   with:
+            #       fail_ci_if_error: true
 
     check-formatting:
         runs-on: ubuntu-latest
