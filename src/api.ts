@@ -1,5 +1,6 @@
 import {
     profile as lichessProfile,
+    game as lichessGame,
     arena as lichessArena,
     swiss as lichessSwiss,
     playerGames as lichessPlayerGames,
@@ -8,11 +9,12 @@ import {
 } from './fetchers/lichess'
 import {
     profile as chesscomProfile,
+    game as chesscomGame,
     tournament as chesscomTournament,
     playerGames as chesscomPlayerGames,
     tournamentGames as chesscomTournamentGames,
 } from './fetchers/chesscom'
-import { ChesscomGameParameters, GameCallback, LichessGameParameters, Profile, Tournament } from './types'
+import { ChesscomGameParameters, Game, GameCallback, LichessGameParameters, Profile, Tournament } from './types'
 import { addOauthTokenForLichessRequests } from './fetchers/fetch'
 
 /**
@@ -84,6 +86,23 @@ export function games(
     }
 
     throw new Error('Must specify the URL to a Lichess or Chess.com player profile or tournament')
+}
+
+/**
+ * Fetch an individual game
+ *
+ * @param url URL of game from Lichess or Chess.com
+ * @returns Promise of game info
+ * @throws Error if the URL is invalid
+ */
+export function game(url: string): Promise<Game> {
+    if (url.startsWith('https://lichess.org/')) {
+        return lichessGame(url)
+    } else if (url.startsWith('https://www.chess.com/')) {
+        return chesscomGame(url)
+    }
+
+    throw new Error('Must specify the URL to a Lichess or Chess.com game')
 }
 
 /**

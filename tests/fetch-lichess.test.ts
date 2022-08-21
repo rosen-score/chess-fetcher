@@ -1,5 +1,5 @@
 import { expect, test, vi } from 'vitest'
-import { profile, arena, swiss, playerGames, arenaGames, swissGames, qs, games } from '../src/fetchers/lichess'
+import { profile, arena, swiss, playerGames, arenaGames, swissGames, qs, games, game } from '../src/fetchers/lichess'
 
 test('fetch player', async () => {
     expect.hasAssertions()
@@ -80,6 +80,33 @@ test('games', async () => {
             vi.fn(() => {})
         )
     ).resolves.toBe(true)
+})
+
+test('individual game', async () => {
+    expect.assertions(4)
+    await game('https://lichess.org/KSMY85yj').then((data) => {
+        expect(data.site).toBe('lichess')
+    })
+    await game('https://lichess.org/KSMY85yj#3').then((data) => {
+        expect(data.site).toBe('lichess')
+    })
+    await game('https://lichess.org/KSMY85yj/black').then((data) => {
+        expect(data.site).toBe('lichess')
+    })
+    await game('https://lichess.org/KSMY85yj/black#3').then((data) => {
+        expect(data.site).toBe('lichess')
+    })
+})
+
+test('individual game using 12-digit game ID', async () => {
+    expect.hasAssertions()
+    await game('https://lichess.org/KSMY85yjXXXX').then((data) => {
+        expect(data.site).toBe('lichess')
+    })
+})
+
+test('invalid game id', async () => {
+    expect(() => game('https://lichess.org/abc')).toThrowError('Invalid game ID: abc')
 })
 
 test('not found', async () => {

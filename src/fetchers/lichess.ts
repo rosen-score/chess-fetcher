@@ -1,7 +1,7 @@
 import ndjson from 'fetch-ndjson'
 import { formatGame, formatProfile, formatTournament } from '../formatters/lichess'
 import { checkForServerError, fetchFromEndpoint } from './fetch'
-import { GameCallback, LichessGameParameters, Profile, Tournament } from '../types'
+import { Game, GameCallback, LichessGameParameters, Profile, Tournament } from '../types'
 
 export function qs(obj: Record<string, any>): string {
     let params = new URLSearchParams(obj).toString()
@@ -72,4 +72,26 @@ export async function games(url: string, callback: GameCallback, params: Lichess
             callback(formatGame(value))
         }
     })
+}
+
+export function game(url: string): Promise<Game> {
+    let gameId = new URL(url).pathname.split('/')[1]
+
+    if (gameId.length === 12) {
+        gameId = gameId.substring(0, 8)
+    }
+
+    if (gameId.length !== 8) {
+        throw new Error(`Invalid game ID: ${gameId}`)
+    }
+
+    return fetchFromEndpoint(`https://lichess.org/game/export/${gameId}${qs({ pgnInJson: true, clocks: true })}`).then(
+        (response) => {
+            checkForServerError(response)
+
+            return new Promise((resolve) => {
+                response.json().then((data) => resolve(formatGame(data)))
+            })
+        }
+    )
 }

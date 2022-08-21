@@ -48,6 +48,8 @@ function getMockServerEndpoint(url: string): string {
         'https://lichess.org/api/user/EricRosen': '/lichess/player.json',
         'https://lichess.org/api/user/blank-user': '/lichess/player-without-profile.json',
 
+        'https://lichess.org/game/export/KSMY85yj?pgnInJson=true&clocks=true': '/lichess/game.json',
+
         'https://lichess.org/api/tournament/2oEh6hZw': '/lichess/arena.json',
         'https://lichess.org/api/swiss/48jrx3m6': '/lichess/swiss.json',
 
@@ -92,6 +94,8 @@ function getMockServerEndpoint(url: string): string {
         'https://api.chess.com/pub/titled/WGM': '/chesscom/titled/WGM.json',
         'https://api.chess.com/pub/titled/WIM': '/chesscom/titled/WIM.json',
         'https://api.chess.com/pub/titled/WNM': '/chesscom/titled/WNM.json',
+
+        'https://www.chess.com/callback/live/game/45328864849': '/chesscom/game.json',
 
         'https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103': '/chesscom/swiss.json',
         'https://api.chess.com/pub/tournament/10-bullet-1925132': '/chesscom/arena.json',

@@ -4,7 +4,7 @@
     "scripts": {
         "coverage": "vitest run --coverage",
         "format": "prettier --write .",
-        "format-ci": "prettier --check .",
+        "tsc": "tsc --noEmit",
         "mock-server": "ts-node tests/mock-server/server.ts",
         "test": "vitest run",
         "watch": "vitest"

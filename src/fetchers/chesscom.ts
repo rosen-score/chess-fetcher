@@ -10,6 +10,7 @@ import {
     Tournament,
     ChesscomStats,
     GameCallback,
+    Game,
 } from '../types'
 
 export function profile(username: string): Promise<Profile> {
@@ -110,6 +111,31 @@ export function tournamentGames(id: string, callback: GameCallback): Promise<boo
             .catch((error) => reject(error))
 
         resolve(true)
+    })
+}
+
+export function game(url: string): Promise<Game> {
+    let gameId = new URL(url).pathname.split('/')[3]
+    return fetchFromEndpoint(`https://www.chess.com/callback/live/game/${gameId}`).then((response) => {
+        return new Promise((resolve) => {
+            response.json().then((data) => {
+                let uuid = data.game.uuid
+                let date = data.game.pgnHeaders.Date.split('.')
+
+                archive(
+                    `https://api.chess.com/pub/player/${data.game.pgnHeaders.White.toLowerCase()}/games/${date[0]}/${
+                        date[1]
+                    }`
+                ).then((data) => {
+                    for (let game of data.games) {
+                        if (game.uuid === uuid) {
+                            resolve(formatGame(game))
+                            return
+                        }
+                    }
+                })
+            })
+        })
     })
 }
 

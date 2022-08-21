@@ -2,6 +2,7 @@ import { describe, expect, test } from 'vitest'
 import {
     archive,
     archives,
+    game,
     playerGames,
     profile,
     stats,
@@ -136,6 +137,13 @@ test('fetch tournament games (swiss)', async () => {
         expect(game.site).toBe('chess.com')
     }).then((data) => {
         expect(data).toBe(true)
+    })
+})
+
+test('fetch individual game', async () => {
+    expect.hasAssertions()
+    await game('https://www.chess.com/game/live/45328864849').then((data) => {
+        expect(data.site).toBe('chess.com')
     })
 })
 

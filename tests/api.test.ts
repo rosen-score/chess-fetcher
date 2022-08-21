@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import { addLichessOauthToken, games, player, tournament } from '../src/api'
+import { addLichessOauthToken, game, games, player, tournament } from '../src/api'
 import { fetchFromEndpoint, resetOauthToken } from '../src/fetchers/fetch'
 
 describe('fetching a player profile', () => {
@@ -45,6 +45,21 @@ describe('fetching a tournament', () => {
                 expect(data.site).toStrictEqual('chess.com')
             }
         )
+    })
+})
+
+describe('fetching an individual game', () => {
+    test('from lichess', async () => {
+        expect.hasAssertions()
+        await game('https://lichess.org/KSMY85yj').then((data) => {
+            expect(data.site).toStrictEqual('lichess')
+        })
+    })
+    test('from chess.com', async () => {
+        expect.hasAssertions()
+        await game('https://www.chess.com/game/live/45328864849').then((data) => {
+            expect(data.site).toStrictEqual('chess.com')
+        })
     })
 })
 
@@ -141,6 +156,10 @@ describe('test invalid inputs', () => {
         expect(() => games('invalid', () => {})).toThrowError(
             'Must specify the URL to a Lichess or Chess.com player profile or tournament'
         )
+    })
+
+    test('for individual game', () => {
+        expect(() => game('invalid')).toThrowError('Must specify the URL to a Lichess or Chess.com game')
     })
 })
 
