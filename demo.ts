@@ -10,6 +10,7 @@ tournament('https://lichess.org/tournament/may22lta').then((tournament) => {
     console.log(tournament)
 })
 
+// Fetch an individual game
 game('https://lichess.org/fBcFhVs4').then((game) => {
     console.log(game)
 })
