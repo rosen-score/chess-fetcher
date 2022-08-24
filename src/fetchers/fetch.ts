@@ -24,6 +24,9 @@ export function fetchFromEndpoint(url: string, options: FetchOptions = {}) {
 
     options = {
         signal: abortController.signal,
+        headers: {
+            Accept: 'application/json',
+        },
         ...options,
     }
 

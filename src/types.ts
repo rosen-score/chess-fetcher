@@ -4,7 +4,7 @@ export type ChessSite = 'lichess' | 'chess.com'
 
 export type FetchOptions = {
     headers?: {
-        Accept?: 'application/x-ndjson'
+        Accept?: 'application/json' | 'application/x-ndjson'
         Authorization?: string
     }
     signal?: AbortSignal
