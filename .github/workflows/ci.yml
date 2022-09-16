@@ -24,10 +24,10 @@ jobs:
                   node-version: 'latest'
             - run: npm ci
             - run: npm run coverage
-            # - name: Upload coverage to Codecov
-            #   uses: codecov/codecov-action@v3.1.0
-            #   with:
-            #       fail_ci_if_error: true
+            - name: Upload coverage to Codecov
+              uses: codecov/codecov-action@v3.1.0
+              with:
+                  fail_ci_if_error: true
 
     check-formatting:
         runs-on: ubuntu-latest
