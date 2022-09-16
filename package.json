@@ -1,5 +1,5 @@
 {
-    "name": "@rosen-score/chess-fetcher",
+    "name": "chess-fetcher",
     "version": "0.1.0",
     "scripts": {
         "coverage": "vitest run --coverage",
