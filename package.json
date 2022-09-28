@@ -20,8 +20,7 @@
     },
     "dependencies": {
         "@mliebelt/pgn-parser": "^1.4.4",
-        "fetch-ndjson": "^1.1.7",
-        "type-fest": "^2.13.1"
+        "fetch-ndjson": "^1.1.7"
     },
     "main": "dist/api.js",
     "types": "dist/api.d.ts"

@@ -18,8 +18,10 @@ export function cancelFetch() {
 
 export function fetchFromEndpoint(url: string, options: FetchOptions = {}) {
     if (lichessOauthToken && url.startsWith('https://lichess.org/')) {
-        options.headers = options.headers ?? {}
-        options.headers.Authorization = `Bearer ${lichessOauthToken}`
+        options.headers = {
+            ...options.headers,
+            Authorization: `Bearer ${lichessOauthToken}`,
+        }
     }
 
     options = {

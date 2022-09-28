@@ -1,5 +1,4 @@
 import { parseGame } from '@mliebelt/pgn-parser'
-import { PartialDeep } from 'type-fest'
 import {
     Game,
     Result,
@@ -71,11 +70,11 @@ function getMovesFromPgn(pgn: string) {
     return parseGame(pgn, { startRule: 'game' }).moves
 }
 
-export function getResult(json: PartialDeep<ChessComGame>): Result {
+export function getResult(json: ChessComGame): Result {
     let colors: ChessColor[] = ['white', 'black']
 
     for (let color of colors) {
-        switch (json[color]!.result) {
+        switch (json[color].result) {
             case 'agreed':
                 return {
                     outcome: 'draw',
@@ -142,7 +141,7 @@ export function getResult(json: PartialDeep<ChessComGame>): Result {
         }
     }
 
-    throw new Error(`Unexpected result: ${json.white?.result} or ${json.black?.result}`)
+    throw new Error(`Unexpected result: ${json.white.result} or ${json.black.result}`)
 }
 
 export function getTimeControl(time_control: string): TimeControl {

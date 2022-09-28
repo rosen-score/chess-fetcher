@@ -2,7 +2,6 @@ import { describe, expect, test } from 'vitest'
 import { formatGame, formatProfile, getResult, getTimeControl } from '../src/formatters/chesscom'
 import { readFileSync } from 'fs'
 import { ChessComGame, Result } from '../src/types'
-import { PartialDeep } from 'type-fest'
 
 test('format chesscom game', () => {
     let games = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/05.json', 'utf-8'))
@@ -136,7 +135,7 @@ test('format chess.com player with no games', () => {
 })
 
 describe('results', () => {
-    test.each<[PartialDeep<ChessComGame>, Result]>([
+    test.each<[object, Result]>([
         // draws
         [
             { white: { result: 'agreed' }, black: { result: 'agreed' } },
@@ -217,16 +216,26 @@ describe('results', () => {
             { winner: 'white', via: 'variant', label: '1-0' },
         ],
     ])('test results', (input, expected) => {
-        expect(getResult(input)).toStrictEqual(expected)
+        let games = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/05.json', 'utf-8'))
+        let game: ChessComGame = {
+            ...games.games[0],
+            ...input,
+        }
+        expect(getResult(game)).toStrictEqual(expected)
     })
 })
 
 describe('test invalid result', () => {
-    test.each<PartialDeep<ChessComGame>>([
-        { white: { result: 'invalidresult' }, black: { result: 'win' } },
-        { white: { result: 'win' }, black: { result: 'invalidresult' } },
-    ])('test results', async (input) => {
-        await expect(() => getResult(input)).toThrowError(/Unexpected result/)
+    test.each<[object, string]>([
+        [{ white: { result: 'invalidresult' }, black: { result: 'win' } }, 'Unexpected result: invalidresult or win'],
+        [{ white: { result: 'win' }, black: { result: 'invalidresult' } }, 'Unexpected result: win or invalidresult'],
+    ])('test results', (input, expected) => {
+        let games = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/05.json', 'utf-8'))
+        let game: ChessComGame = {
+            ...games.games[0],
+            ...input,
+        }
+        expect(() => getResult(game)).toThrowError(expected)
     })
 })
 
