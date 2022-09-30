@@ -56,6 +56,7 @@ export type ChesscomGameParameters = {
 export type GamePlayer = {
     username: string
     title: Title
+    rating?: number
 }
 
 export type ChessComGamePlayer = {
@@ -324,6 +325,11 @@ export type LichessGame = {
     }
     winner: ChessColor
     moves: string
+    opening: {
+        eco: string
+        name: string
+        ply: number
+    }
     pgn?: string
     clock: LichessTimeControl
 }
@@ -367,6 +373,10 @@ export interface Game {
     }
 
     timeControl: TimeControl
+    opening: {
+        eco: string
+        name: string
+    }
     moves: Array<PgnMove>
 }
 

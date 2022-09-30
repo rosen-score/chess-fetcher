@@ -44,6 +44,10 @@ test('format chesscom game', () => {
             initial: 180,
             increment: 1,
         },
+        opening: {
+            eco: '',
+            name: '',
+        },
     })
 
     expect(formattedGame.moves).toBeInstanceOf(Array)

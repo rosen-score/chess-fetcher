@@ -66,15 +66,21 @@ export function formatGame(json: LichessGame): Game {
             white: {
                 username: json.players.white.user?.name,
                 title: json.players.white.user?.title,
+                rating: json.players.white.rating,
             },
             black: {
                 username: json.players.black.user?.name,
                 title: json.players.black.user?.title,
+                rating: json.players.black.rating,
             },
         },
         timeControl: getTimeControl(json.clock),
 
         result: getResult(json),
+        opening: {
+            name: json.opening?.name || '',
+            eco: json.opening?.eco || '',
+        },
         moves:
             json.variant === 'standard' && json.moves
                 ? parseGame(json.pgn || json.moves, { startRule: 'game' }).moves

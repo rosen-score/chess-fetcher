@@ -63,6 +63,11 @@ export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): G
         // When the pgn-parser package tried to parse a Crazyhouse game,
         // it errored when it found the `@` symbol
         moves: isStandard ? getMovesFromPgn(json.pgn) : [],
+
+        opening: {
+            name: '',
+            eco: '',
+        },
     }
 }
 
