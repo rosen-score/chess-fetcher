@@ -147,6 +147,10 @@ test('fetch individual game', async () => {
     })
 })
 
+test('fetch individual game not found in the archives', async () => {
+    await expect(() => game('https://www.chess.com/game/live/999')).rejects.toThrowError('Game not found in monthly archive')
+})
+
 describe('title is included with player info for games', () => {
     test('of player', async () => {
         expect.hasAssertions()

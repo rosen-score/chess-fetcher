@@ -117,7 +117,7 @@ export function tournamentGames(id: string, callback: GameCallback): Promise<boo
 export function game(url: string): Promise<Game> {
     let gameId = new URL(url).pathname.split('/')[3]
     return fetchFromEndpoint(`https://www.chess.com/callback/live/game/${gameId}`).then((response) => {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
             response.json().then((data) => {
                 let uuid = data.game.uuid
                 let date = data.game.pgnHeaders.Date.split('.')
@@ -132,6 +132,8 @@ export function game(url: string): Promise<Game> {
                             resolve(formatGame(game))
                             return
                         }
+
+                        reject(new Error('Game not found in monthly archive'))
                     }
                 })
             })
