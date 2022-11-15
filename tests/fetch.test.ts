@@ -34,6 +34,6 @@ test('cancel fetch', async () => {
     cancelFetch()
 
     await expect(fetchFromEndpoint(`https://lichess.org/api/games/user/EricRosen`)).rejects.toThrowError(
-        'The operation was aborted'
+        'operation was aborted'
     )
 })
