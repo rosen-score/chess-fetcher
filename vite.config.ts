@@ -7,5 +7,6 @@ export default defineConfig({
         deps: {
             interopDefault: true,
         },
+        teardownTimeout: 5000,
     },
 })
