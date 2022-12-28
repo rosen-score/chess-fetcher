@@ -12,12 +12,12 @@
     },
     "devDependencies": {
         "@fastify/static": "^6.4.0",
-        "@vitest/coverage-c8": "^0.25.2",
+        "@vitest/coverage-c8": "^0.26.2",
         "fastify": "^4.0.0",
         "prettier": "^2.6.2",
         "ts-node": "^10.8.0",
         "typescript": "^4.6.4",
-        "vitest": "^0.25.2"
+        "vitest": "^0.26.2"
     },
     "dependencies": {
         "@mliebelt/pgn-parser": "^1.4.4",
