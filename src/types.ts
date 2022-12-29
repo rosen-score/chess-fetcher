@@ -334,7 +334,7 @@ export type LichessGame = {
     clock: LichessTimeControl
 }
 
-export type Title = 'CM' | 'FM' | 'GM' | 'IM' | 'NM' | 'WCM' | 'WFM' | 'WGM' | 'WIM' | 'WNM' | null
+export type Title = 'CM' | 'FM' | 'GM' | 'IM' | 'NM' | 'WCM' | 'WFM' | 'WGM' | 'WIM' | 'WNM' | 'BOT' | null
 
 export type TitledPlayers = { [key: string]: Title }
 
