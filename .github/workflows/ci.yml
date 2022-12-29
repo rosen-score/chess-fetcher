@@ -6,8 +6,8 @@ jobs:
     test-suite:
         strategy:
             matrix:
-                node: [18, 19, 'latest']
-                os: [ubuntu-latest, macos-latest]
+                node: ['latest']
+                os: [ubuntu-latest]
         runs-on: ${{ matrix.os }}
         timeout-minutes: 1
         steps:
