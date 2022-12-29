@@ -17,6 +17,9 @@ import {
 import { ChesscomGameParameters, Game, GameCallback, LichessGameParameters, Profile, Tournament } from './types'
 import { addOauthTokenForLichessRequests } from './fetchers/fetch'
 
+export { Game, Profile } from './types'
+export { PgnMove } from '@mliebelt/pgn-parser'
+
 /**
  * Fetch a player's profile (public info, rating, game stats)
  *
