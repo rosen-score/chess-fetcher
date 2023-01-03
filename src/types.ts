@@ -285,7 +285,9 @@ export type LichessPlayer = {
         tv: number
     }
     url: string
-    count: {}
+    count: {
+        all: number
+    }
     followable: boolean
     following: boolean
     blocking: boolean
@@ -421,6 +423,10 @@ export interface Profile {
         bullet: Rating
         blitz: Rating
         rapid: Rating
+    }
+
+    counts: {
+        all: number
     }
 }
 

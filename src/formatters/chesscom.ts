@@ -180,6 +180,25 @@ function sumValuesOfObject(obj: { [key: string]: number }): number {
 }
 
 export function formatProfile(player: ChessComPlayer, ratings: ChesscomStats): Profile {
+    let totalGameCount = 0
+
+    if (ratings.chess_bullet) {
+        totalGameCount +=
+            ratings.chess_bullet.record.win + ratings.chess_bullet.record.loss + ratings.chess_bullet.record.draw
+    }
+    if (ratings.chess_blitz) {
+        totalGameCount +=
+            ratings.chess_blitz.record.win + ratings.chess_blitz.record.loss + ratings.chess_blitz.record.draw
+    }
+    if (ratings.chess_rapid) {
+        totalGameCount +=
+            ratings.chess_rapid.record.win + ratings.chess_rapid.record.loss + ratings.chess_rapid.record.draw
+    }
+    if (ratings.chess_daily) {
+        totalGameCount +=
+            ratings.chess_daily.record.win + ratings.chess_daily.record.loss + ratings.chess_daily.record.draw
+    }
+
     return {
         site: 'chess.com',
         link: player.url,
@@ -204,6 +223,10 @@ export function formatProfile(player: ChessComPlayer, ratings: ChesscomStats): P
                 rating: ratings.chess_rapid?.last.rating || 0,
                 games: ratings.chess_rapid ? sumValuesOfObject(ratings.chess_rapid.record) : 0,
             },
+        },
+
+        counts: {
+            all: totalGameCount,
         },
     }
 }

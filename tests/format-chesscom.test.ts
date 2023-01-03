@@ -92,17 +92,21 @@ test('format chess.com player', () => {
 
         ratings: {
             bullet: {
-                rating: 2825,
-                games: 8060,
+                rating: 2743,
+                games: 8546,
             },
             blitz: {
-                rating: 2701,
-                games: 2323,
+                rating: 2614,
+                games: 2897,
             },
             rapid: {
-                rating: 2312,
-                games: 51,
+                rating: 2389,
+                games: 103,
             },
+        },
+
+        counts: {
+            all: 11548,
         },
     })
 })
@@ -134,6 +138,10 @@ test('format chess.com player with no games', () => {
                 rating: 0,
                 games: 0,
             },
+        },
+
+        counts: {
+            all: 0,
         },
     })
 })

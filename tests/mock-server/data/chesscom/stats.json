@@ -1,6 +1,10 @@
 {
     "chess_daily": {
-        "last": { "rating": 1879, "date": 1457925619, "rd": 284 },
+        "last": {
+            "rating": 1879,
+            "date": 1457925619,
+            "rd": 284
+        },
         "best": {
             "rating": 2214,
             "date": 1334336539,
@@ -15,40 +19,71 @@
         }
     },
     "chess_rapid": {
-        "last": { "rating": 2312, "date": 1633984902, "rd": 159 },
-        "best": {
-            "rating": 2379,
-            "date": 1517442166,
-            "game": "https://www.chess.com/game/live/5691000913"
+        "last": {
+            "rating": 2389,
+            "date": 1659124901,
+            "rd": 55
         },
-        "record": { "win": 32, "loss": 16, "draw": 3 }
+        "best": {
+            "rating": 2420,
+            "date": 1658497663,
+            "game": "https://www.chess.com/game/live/52515679595"
+        },
+        "record": {
+            "win": 60,
+            "loss": 33,
+            "draw": 10
+        }
     },
     "chess_bullet": {
-        "last": { "rating": 2825, "date": 1653801740, "rd": 22 },
+        "last": {
+            "rating": 2743,
+            "date": 1666126695,
+            "rd": 61
+        },
         "best": {
             "rating": 2880,
             "date": 1653790934,
             "game": "https://www.chess.com/game/live/47455849165"
         },
-        "record": { "win": 4593, "loss": 2988, "draw": 479 }
+        "record": {
+            "win": 4879,
+            "loss": 3153,
+            "draw": 514
+        }
     },
     "chess_blitz": {
-        "last": { "rating": 2701, "date": 1654340588, "rd": 33 },
+        "last": {
+            "rating": 2614,
+            "date": 1672185979,
+            "rd": 44
+        },
         "best": {
-            "rating": 2764,
-            "date": 1653944867,
+            "rating": 2775,
+            "date": 1656503494,
             "game": "https://www.chess.com/game/live/3829604861"
         },
-        "record": { "win": 1365, "loss": 798, "draw": 160 }
+        "record": {
+            "win": 1678,
+            "loss": 1016,
+            "draw": 203
+        }
     },
     "fide": 2450,
     "tactics": {
-        "highest": { "rating": 2799, "date": 1496684712 },
-        "lowest": { "rating": 1367, "date": 1431473402 }
+        "highest": {
+            "rating": 2799,
+            "date": 1496684712
+        },
+        "lowest": {
+            "rating": 1367,
+            "date": 1431473402
+        }
     },
-    "lessons": {
-        "highest": { "rating": 1660, "date": 1567722634 },
-        "lowest": { "rating": 1300, "date": 1344891297 }
-    },
-    "puzzle_rush": { "best": { "total_attempts": 73, "score": 70 } }
+    "puzzle_rush": {
+        "best": {
+            "total_attempts": 73,
+            "score": 70
+        }
+    }
 }

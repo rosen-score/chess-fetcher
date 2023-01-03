@@ -262,6 +262,10 @@ test('format lichess player', () => {
                 games: 982,
             },
         },
+
+        counts: {
+            all: 28015,
+        },
     })
 })
 
@@ -291,6 +295,10 @@ test('format lichess player with blank profile', () => {
                 rating: 1500,
                 games: 0,
             },
+        },
+
+        counts: {
+            all: 0,
         },
     })
 })

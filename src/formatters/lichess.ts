@@ -184,5 +184,9 @@ export function formatProfile(player: LichessPlayer): Profile {
                 games: player.perfs.rapid.games,
             },
         },
+
+        counts: {
+            all: player.count.all,
+        },
     }
 }
