@@ -35,6 +35,10 @@ export function formatTournament(json: ChessComTournament): Tournament {
     }
 }
 
+function getLinkToGame(id: string, color: ChessColor, type: 'live' | 'daily'): string {
+    return `https://www.chess.com/analysis/game/${type}/${id}?tab=analysis&flip=${color === 'black'}&move=0`
+}
+
 export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): Game {
     const isStandard: boolean =
         json.rules === 'chess' && json.initial_setup === 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
@@ -45,8 +49,8 @@ export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): G
         site: 'chess.com',
         id: id,
         links: {
-            white: `https://www.chess.com/analysis/game/live/${id}?tab=analysis&flip=false&move=0`,
-            black: `https://www.chess.com/analysis/game/live/${id}?tab=analysis&flip=true&move=0`,
+            white: getLinkToGame(id, 'white', json.time_control.includes('/') ? 'daily' : 'live'),
+            black: getLinkToGame(id, 'black', json.time_control.includes('/') ? 'daily' : 'live'),
         },
 
         timestamp: json.end_time * 1000,
@@ -150,6 +154,13 @@ export function getResult(json: ChessComGame): Result {
 }
 
 export function getTimeControl(time_control: string): TimeControl {
+    if (time_control.includes('/')) {
+        let secondsPerMove = time_control.split('/').pop() as string
+        return {
+            correspondence: parseInt(secondsPerMove),
+        }
+    }
+
     let values = time_control.split('+').map((value) => +value)
 
     return {

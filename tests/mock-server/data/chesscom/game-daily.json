@@ -1,0 +1,28 @@
+{
+    "url": "https://www.chess.com/game/daily/122454262",
+    "pgn": "[Event \"Let's Play!\"]\n[Site \"Chess.com\"]\n[Date \"2015.11.18\"]\n[Round \"-\"]\n[White \"R_Doofus\"]\n[Black \"50BigDave50\"]\n[Result \"1-0\"]\n[CurrentPosition \"3r1rk1/ppp4Q/4b1p1/3pq3/8/2NB4/PPP3P1/2KR3R b - - 1 20\"]\n[Timezone \"UTC\"]\n[ECO \"C00\"]\n[ECOUrl \"https://www.chess.com/openings/French-Defense-Normal-Variation\"]\n[UTCDate \"2015.11.18\"]\n[UTCTime \"02:45:05\"]\n[WhiteElo \"1499\"]\n[BlackElo \"1097\"]\n[TimeControl \"1/432000\"]\n[Termination \"R_Doofus won by checkmate\"]\n[StartTime \"02:45:05\"]\n[EndDate \"2015.11.18\"]\n[EndTime \"18:06:44\"]\n[Link \"https://www.chess.com/game/daily/122454262\"]\n\n1. e4 e6 2. d4 Ne7 3. Nf3 g6 4. Nc3 Bg7 5. Be3 d5 6. e5 Nbc6 7. Bd3 Nf5 8. Qd2 Ncxd4 9. Nxd4 Nxe3 10. fxe3 Bxe5 11. Nf3 Qf6 12. Nxe5 Qxe5 13. O-O-O O-O 14. e4 Bd7 15. h4 Rad8 16. exd5 exd5 17. h5 Bf5 18. Qh6 Be6 19. hxg6 fxg6 20. Qxh7# 1-0\n",
+    "time_control": "1/432000",
+    "end_time": 1447870004,
+    "rated": true,
+    "tcn": "mC0SlB!0gv2Ubs92cuZJCK5Qft0LdlQBvBLunu2KBv7TvKTKec8?uC6ZpF47CJSJFNZLlVLSNU1UV3",
+    "uuid": "5f7fbddc-8d9e-11e5-8106-00000001000b",
+    "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "fen": "3r1rk1/ppp4Q/4b1p1/3pq3/8/2NB4/PPP3P1/2KR3R b - - 1 20",
+    "start_time": 1447814705,
+    "time_class": "daily",
+    "rules": "chess",
+    "white": {
+        "rating": 1499,
+        "result": "win",
+        "@id": "https://api.chess.com/pub/player/r_doofus",
+        "username": "R_Doofus",
+        "uuid": "2ac7ea0a-201d-11e4-8032-000000000000"
+    },
+    "black": {
+        "rating": 1097,
+        "result": "checkmated",
+        "@id": "https://api.chess.com/pub/player/50bigdave50",
+        "username": "50BigDave50",
+        "uuid": "d096f7a6-0254-11e3-801e-000000000000"
+    }
+}

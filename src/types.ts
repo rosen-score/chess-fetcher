@@ -385,8 +385,9 @@ export interface Game {
 export type GameCallback = (game: Game) => void
 
 export interface TimeControl {
-    initial: number
-    increment: number
+    initial?: number
+    increment?: number
+    correspondence?: number
 }
 
 export interface Result {
