@@ -12,7 +12,7 @@ export function resetOauthToken() {
     lichessOauthToken = null
 }
 
-export function cancelFetch() {
+export function cancelFetch(): void {
     abortController.abort()
 }
 

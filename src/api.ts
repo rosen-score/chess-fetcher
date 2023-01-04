@@ -20,6 +20,8 @@ import { addOauthTokenForLichessRequests } from './fetchers/fetch'
 export { Game, Profile, GamePlayer } from './types'
 export { PgnMove } from '@mliebelt/pgn-parser'
 
+export { cancelFetch } from './fetchers/fetch'
+
 /**
  * Fetch a player's profile (public info, rating, game stats)
  *
