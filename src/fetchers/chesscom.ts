@@ -141,18 +141,31 @@ export function game(url: string): Promise<Game> {
     })
 }
 
+// Chess.com doesn't provide a way to determine if an opponent is a bot
+// These are some of the common ones I found
+function botAccounts(): string[] {
+    return ['stockfish', 'computer4-impossible', ...Array.from({ length: 25 }, (_, i) => `komodo${i + 1}`)]
+}
+
 export function titledPlayers(
-    titles: Array<Title> = ['CM', 'FM', 'GM', 'IM', 'NM', 'WCM', 'WFM', 'WGM', 'WIM', 'WNM']
+    titles: Array<Title> = ['CM', 'FM', 'GM', 'IM', 'NM', 'WCM', 'WFM', 'WGM', 'WIM', 'WNM', 'BOT']
 ): Promise<TitledPlayers> {
     return new Promise(async (resolve) => {
         let allTitledPlayers: TitledPlayers = {}
 
         for (let title of titles) {
+            if (title === 'BOT') continue
             await fetchFromEndpoint(`https://api.chess.com/pub/titled/${title}`)
                 .then((response) => response.json())
                 .then((players: { players: string[] }) => {
                     players.players.forEach((player) => (allTitledPlayers[player.toLowerCase()] = title))
                 })
+        }
+
+        if (titles.includes('BOT')) {
+            for (let bot of botAccounts()) {
+                allTitledPlayers[bot] = 'BOT'
+            }
         }
 
         return resolve(allTitledPlayers)
