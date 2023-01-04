@@ -1,6 +1,6 @@
 {
     "name": "chess-fetcher",
-    "version": "0.3.4",
+    "version": "0.4.0",
     "scripts": {
         "build": "tsc",
         "coverage": "vitest run --coverage",
