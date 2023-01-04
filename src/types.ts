@@ -403,6 +403,7 @@ export interface Result {
         | 'timeout'
         | 'abandonment'
         | 'noStart' // Did not make a move
+        | 'cheat' // Ended by cheat detection
         | '50moves'
         | 'variant' // For example, threecheck or bughousepartnerlose
     label: GameResultString

@@ -126,6 +126,12 @@ export function getResult(json: Partial<LichessGame>): Result {
                 via: 'variant',
                 label: getResultStringForColor(json.winner),
             }
+        case 'cheat':
+            return {
+                winner: json.winner,
+                via: 'cheat',
+                label: getResultStringForColor(json.winner),
+            }
         case 'draw':
             return {
                 outcome: 'draw',
