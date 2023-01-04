@@ -229,6 +229,33 @@ describe('results', () => {
     })
 })
 
+test('test game end by cheat detection (same position in analysis board)', () => {
+    // sample game from:
+    // curl -H 'Accept: application/json' 'https://lichess.org/game/export/qwbLhewv?evals=false'
+
+    let input: LichessGame = {
+        id: 'qwbLhewv',
+        rated: false,
+        variant: 'fromPosition',
+        speed: 'rapid',
+        perf: 'fromPosition',
+        createdAt: 1660763693169,
+        lastMoveAt: 1660764265251,
+        status: 'cheat',
+        players: {
+            white: { user: { name: 'rufusson_dufus', patron: true, id: 'rufusson_dufus' }, rating: 2417 },
+            black: { user: { name: 'Xiong_Jina', id: 'xiong_jina' }, rating: 2260 },
+        },
+        initialFen: 'r2q1rk1/pb3p1p/2p2np1/8/1p1bPPnN/6P1/PPQ1B2P/R1BN1R1K w - - 2 18',
+        winner: 'white',
+        moves: 'Bf3 Qb6 e5 Rae8 Ng2 Ba6 Re1 Bf2 Re2 Bxe2 Qxe2 h5 Qf1 Bd4 exf6',
+        clock: { initial: 600, increment: 5, totalTime: 800 },
+    }
+    let formattedGame = formatGame(input)
+
+    expect(formattedGame.result).toStrictEqual({ winner: 'white', via: 'cheat', label: '1-0' })
+})
+
 describe('test invalid result', () => {
     test.each<Partial<LichessGame>>([{ status: 'invalidresult' }])('test results', async (input) => {
         await expect(() => getResult(input)).toThrowError(/Unexpected result/)
