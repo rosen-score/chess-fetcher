@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { addOauthTokenForLichessRequests, cancelFetch, fetchFromEndpoint } from '../src/fetchers/fetch'
+import { addLichessOauthToken, cancelFetch, fetchFromEndpoint } from '../src/fetchers/fetch'
 
 test('default use `Accept: application/json` header', async () => {
     expect.hasAssertions()
@@ -14,7 +14,7 @@ test('default use `Accept: application/json` header', async () => {
 test('adding oauth token to header', async () => {
     expect.hasAssertions()
 
-    addOauthTokenForLichessRequests('abc123')
+    addLichessOauthToken('abc123')
     await fetchFromEndpoint(`https://lichess.org/debug-headers`)
         .then((response) => response.json())
         .then((data) => {

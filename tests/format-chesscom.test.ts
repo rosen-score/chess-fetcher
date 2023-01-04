@@ -132,7 +132,7 @@ test('format chess.com player', () => {
 
     expect(formatProfile(player, stats)).toStrictEqual({
         site: 'chess.com',
-        username: 'imrosen',
+        username: 'IMRosen',
         title: 'IM',
         createdAt: 1327467686000,
         lastSeenAt: 1654340204000,

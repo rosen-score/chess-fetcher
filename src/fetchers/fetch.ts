@@ -4,10 +4,22 @@ const abortController = new AbortController()
 
 let lichessOauthToken: string | null
 
-export function addOauthTokenForLichessRequests(token: string) {
+/**
+ * Add an OAuth token for Lichess requests.
+ * Allows faster download rates when requesting games.
+ *
+ * @param token OAuth token
+ * @returns void
+ */
+export function addLichessOauthToken(token: string) {
     lichessOauthToken = token
 }
 
+/**
+ * Remove the OAuth token for Lichess requests.
+ *
+ * @returns void
+ */
 export function resetOauthToken() {
     lichessOauthToken = null
 }

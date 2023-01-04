@@ -15,12 +15,11 @@ import {
     tournamentGames as chesscomTournamentGames,
 } from './fetchers/chesscom'
 import { ChesscomGameParameters, Game, GameCallback, LichessGameParameters, Profile, Tournament } from './types'
-import { addOauthTokenForLichessRequests } from './fetchers/fetch'
 
 export { Game, Profile, GamePlayer } from './types'
 export { PgnMove } from '@mliebelt/pgn-parser'
 
-export { cancelFetch } from './fetchers/fetch'
+export { addLichessOauthToken, cancelFetch, resetOauthToken } from './fetchers/fetch'
 
 /**
  * Fetch a player's profile (public info, rating, game stats)
@@ -108,15 +107,4 @@ export function game(url: string): Promise<Game> {
     }
 
     throw new Error('Must specify the URL to a Lichess or Chess.com game')
-}
-
-/**
- * Add an OAuth token for Lichess requests.
- * Allows faster download rates when requesting games.
- *
- * @param token OAuth token
- * @returns void
- */
-export function addLichessOauthToken(token: string): void {
-    addOauthTokenForLichessRequests(token)
 }

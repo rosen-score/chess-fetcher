@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import { addLichessOauthToken, game, games, player, tournament } from '../src/api'
-import { fetchFromEndpoint, resetOauthToken } from '../src/fetchers/fetch'
+import { game, games, player, tournament } from '../src/api'
+import { addLichessOauthToken, fetchFromEndpoint, resetOauthToken } from '../src/fetchers/fetch'
 
 describe('fetching a player profile', () => {
     test('from lichess', async () => {
@@ -14,7 +14,7 @@ describe('fetching a player profile', () => {
         expect.hasAssertions()
         await player('https://www.chess.com/member/imrosen').then((data) => {
             expect(data.site).toStrictEqual('chess.com')
-            expect(data.username).toStrictEqual('imrosen')
+            expect(data.username).toStrictEqual('IMRosen')
         })
     })
 })

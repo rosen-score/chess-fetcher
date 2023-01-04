@@ -210,10 +210,15 @@ export function formatProfile(player: ChessComPlayer, ratings: ChesscomStats): P
             ratings.chess_daily.record.win + ratings.chess_daily.record.loss + ratings.chess_daily.record.draw
     }
 
+    // Chess.com doesn't give the proper case username via the API
+    // They only give it as lowercase
+    // So we'll get the proper case username from the `url` property
+    let username = player.url.split('/').pop() as string
+
     return {
         site: 'chess.com',
         link: player.url,
-        username: player.username,
+        username,
         title: player.title || '',
 
         createdAt: player.joined * 1000,
