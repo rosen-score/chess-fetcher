@@ -8,5 +8,6 @@ export default defineConfig({
             interopDefault: true,
         },
         teardownTimeout: 5000,
+        reporters: ['default', 'hanging-process'],
     },
 })
