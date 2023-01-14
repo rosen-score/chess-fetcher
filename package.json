@@ -23,6 +23,6 @@
         "@mliebelt/pgn-parser": "^1.4.4",
         "fetch-ndjson": "^1.1.7"
     },
-    "main": "dist/api.js",
-    "types": "dist/api.d.ts"
+    "main": "dist/src/api.js",
+    "types": "dist/src/api.d.ts"
 }
