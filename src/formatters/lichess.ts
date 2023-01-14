@@ -65,12 +65,12 @@ export function formatGame(json: LichessGame): Game {
         players: {
             white: {
                 username: json.players.white.user?.name,
-                title: json.players.white.user?.title,
+                title: json.players.white.user?.title || null,
                 rating: json.players.white.rating,
             },
             black: {
                 username: json.players.black.user?.name,
-                title: json.players.black.user?.title,
+                title: json.players.black.user?.title || null,
                 rating: json.players.black.rating,
             },
         },

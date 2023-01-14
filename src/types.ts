@@ -303,12 +303,12 @@ export type LichessTimeControl = {
 type LichessGameUser = {
     user: {
         name: string
-        title: Title
-        patron: boolean
+        title?: Title
+        patron?: boolean
         id: string
     }
     rating: number
-    ratingDiff: number
+    ratingDiff?: number
     provisional?: boolean
 }
 
@@ -327,12 +327,13 @@ export type LichessGame = {
     }
     winner: ChessColor
     moves: string
-    opening: {
+    opening?: {
         eco: string
         name: string
         ply: number
     }
     pgn?: string
+    initialFen?: string
     clock: LichessTimeControl
 }
 
