@@ -14,6 +14,7 @@ test('format chesscom game', () => {
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'chess.com',
+        type: 'game',
         id: '45328864849',
         links: {
             white: `https://www.chess.com/analysis/game/live/45328864849?tab=analysis&flip=false&move=0`,
@@ -65,6 +66,7 @@ test('format chesscom game (daily game)', () => {
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'chess.com',
+        type: 'game',
         id: '122454262',
         links: {
             white: `https://www.chess.com/analysis/game/daily/122454262?tab=analysis&flip=false&move=0`,
@@ -132,6 +134,7 @@ test('format chess.com player', () => {
 
     expect(formatProfile(player, stats)).toStrictEqual({
         site: 'chess.com',
+        type: 'profile',
         username: 'IMRosen',
         title: 'IM',
         createdAt: 1327467686000,
@@ -167,6 +170,7 @@ test('format chess.com player with no games', () => {
 
     expect(formatProfile(player, stats)).toStrictEqual({
         site: 'chess.com',
+        type: 'profile',
         username: 'blank-user',
         title: '',
         createdAt: 1655594965000,

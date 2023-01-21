@@ -54,6 +54,7 @@ export function formatTournament(json: LichessArena | LichessSwiss): Tournament 
 export function formatGame(json: LichessGame): Game {
     return {
         site: 'lichess',
+        type: 'game',
         id: json.id,
         links: {
             white: `https://lichess.org/${json.id}`,
@@ -167,6 +168,7 @@ export function formatProfile(player: LichessPlayer): Profile {
 
     return {
         site: 'lichess',
+        type: 'profile',
         link: player.url,
         username: player.username,
         title: player.title || '',

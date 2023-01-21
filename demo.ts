@@ -1,4 +1,4 @@
-import { player, tournament, games, game } from './src/api'
+import { player, tournament, games, game, info } from './src/api'
 
 // Fetch a player's profile (public info, rating, game stats)
 player('https://lichess.org/@/EricRosen').then((player) => {
@@ -8,6 +8,11 @@ player('https://lichess.org/@/EricRosen').then((player) => {
 // Fetch tournament info/stats
 tournament('https://lichess.org/tournament/may22lta').then((tournament) => {
     console.log(tournament)
+})
+
+// When you're not sure if a URL is a player or tournament
+info('https://lichess.org/@/EricRosen').then((info) => {
+    console.log(info.type, info)
 })
 
 // Fetch an individual game
