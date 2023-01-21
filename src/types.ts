@@ -343,10 +343,13 @@ export type TitledPlayers = { [key: string]: Title }
 
 export type TournamentType = 'arena' | 'swiss'
 
-export type Tournament = {
-    id: string
-    type: TournamentType
+interface BaseObject {
     site: ChessSite
+    type: 'profile' | 'game' | TournamentType
+}
+
+export interface Tournament extends BaseObject {
+    id: string
     url: string
     name: string
     timeControl: TimeControl
@@ -357,8 +360,7 @@ export type Tournament = {
     }
 }
 
-export interface Game {
-    site: ChessSite
+export interface Game extends BaseObject {
     id: string
     links: {
         white: string
@@ -412,8 +414,7 @@ export interface Result {
 
 export type GameResultString = '1-0' | '0-1' | '½-½' | '*'
 
-export interface Profile {
-    site: 'lichess' | 'chess.com'
+export interface Profile extends BaseObject {
     link: string
     username: string
     title: string

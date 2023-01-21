@@ -62,6 +62,23 @@ export function tournament(url: string): Promise<Tournament> {
 }
 
 /**
+ * Fetch info/stats of either a player or tournament
+ *
+ * @param url URL of object, either a user profile or a tournament
+ * @returns Promise of either a player profile or tournament info
+ * @throws Error if the URL is invalid
+ */
+export function info(url: string): Promise<Profile | Tournament> {
+    if (url.includes('/@/') || url.includes('/member/')) {
+        return player(url)
+    } else if (url.includes('/tournament/') || url.includes('/swiss/')) {
+        return tournament(url)
+    }
+
+    throw new Error('Invalid profile or tournament URL')
+}
+
+/**
  * Fetch games of a player or tournament
  *
  * @param url URL of what you want the games for. Can be (1) Lichess player, (2) Chess.com player, (3) Lichess tournament (arena or Swiss), or (4) Chess.com tournament (arena or Swiss)

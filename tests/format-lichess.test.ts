@@ -41,6 +41,7 @@ test('format lichess game (w/ PGN)', () => {
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'lichess',
+        type: 'game',
         id: '6sHZIw5F',
         links: {
             white: `https://lichess.org/6sHZIw5F`,
@@ -122,6 +123,7 @@ test('format lichess game (w/o PGN)', () => {
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'lichess',
+        type: 'game',
         id: '6sHZIw5F',
         links: {
             white: `https://lichess.org/6sHZIw5F`,
@@ -267,6 +269,7 @@ test('format lichess player', () => {
 
     expect(formatProfile(player)).toStrictEqual({
         site: 'lichess',
+        type: 'profile',
         username: 'EricRosen',
         title: 'IM',
         createdAt: 1433434819500,
@@ -301,6 +304,7 @@ test('format lichess player with blank profile', () => {
 
     expect(formatProfile(player)).toStrictEqual({
         site: 'lichess',
+        type: 'profile',
         username: 'blank-user',
         title: '',
         createdAt: 1290460176000,

@@ -47,6 +47,7 @@ export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): G
 
     return {
         site: 'chess.com',
+        type: 'game',
         id: id,
         links: {
             white: getLinkToGame(id, 'white', json.time_control.includes('/') ? 'daily' : 'live'),
@@ -217,6 +218,7 @@ export function formatProfile(player: ChessComPlayer, ratings: ChesscomStats): P
 
     return {
         site: 'chess.com',
+        type: 'profile',
         link: player.url,
         username,
         title: player.title || '',

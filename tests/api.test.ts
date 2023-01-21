@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import { game, games, player, tournament } from '../src/api'
+import { game, games, info, player, tournament } from '../src/api'
 import { addLichessOauthToken, fetchFromEndpoint, resetOauthToken } from '../src/fetchers/fetch'
 
 describe('fetching a player profile', () => {
@@ -45,6 +45,37 @@ describe('fetching a tournament', () => {
                 expect(data.site).toStrictEqual('chess.com')
             }
         )
+    })
+})
+
+describe('fetching either a profile or a tournament', () => {
+    test('player from lichess', async () => {
+        expect.hasAssertions()
+        await info('https://lichess.org/@/EricRosen').then((data) => {
+            expect(data.site).toStrictEqual('lichess')
+            expect(data.type).toStrictEqual('profile')
+        })
+    })
+    test('player from chess.com', async () => {
+        expect.hasAssertions()
+        await info('https://www.chess.com/member/imrosen').then((data) => {
+            expect(data.site).toStrictEqual('chess.com')
+            expect(data.type).toStrictEqual('profile')
+        })
+    })
+    test('tournament from lichess', async () => {
+        expect.hasAssertions()
+        await info('https://lichess.org/tournament/2oEh6hZw').then((data) => {
+            expect(data.site).toStrictEqual('lichess')
+            expect(data.type).toStrictEqual('arena')
+        })
+    })
+    test('tournament from chess.com', async () => {
+        expect.hasAssertions()
+        await info('https://www.chess.com/tournament/live/arena/10-bullet-1925132').then((data) => {
+            expect(data.site).toStrictEqual('chess.com')
+            expect(data.type).toStrictEqual('arena')
+        })
     })
 })
 
@@ -150,6 +181,10 @@ describe('test invalid inputs', () => {
 
     test('for tournament', () => {
         expect(() => tournament('invalid')).toThrowError('Invalid tournament URL')
+    })
+
+    test('for info (either player or tournament)', () => {
+        expect(() => info('invalid')).toThrowError('Invalid profile or tournament URL')
     })
 
     test('for games', () => {
