@@ -41,7 +41,8 @@ function getLinkToGame(id: string, color: ChessColor, type: 'live' | 'daily'): s
 
 export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): Game {
     const isStandard: boolean =
-        json.rules === 'chess' && json.initial_setup === 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
+        json.rules === 'chess' &&
+        (!json.initial_setup || json.initial_setup === 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1')
 
     const id = json.url.substring(json.url.lastIndexOf('/') + 1)
 

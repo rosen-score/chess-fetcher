@@ -56,6 +56,58 @@ test('format chesscom game', () => {
     expect(formattedGame.moves[0].notation.notation).toBe('d4')
 })
 
+test('format chesscom arena game', () => {
+    let game = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/arena-game.json', 'utf-8'))
+
+    let formattedGame = formatGame(game)
+    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
+        moves: [],
+    })
+
+    expect(formattedGameMinusMoves).toEqual({
+        site: 'chess.com',
+        type: 'game',
+        id: '68667858629',
+        links: {
+            white: 'https://www.chess.com/analysis/game/live/68667858629?tab=analysis&flip=false&move=0',
+            black: 'https://www.chess.com/analysis/game/live/68667858629?tab=analysis&flip=true&move=0',
+        },
+
+        timestamp: 1674928926000,
+        isStandard: true,
+
+        result: {
+            winner: 'black',
+            via: 'timeout',
+            label: '0-1',
+        },
+
+        moves: [],
+        players: {
+            white: {
+                username: 'Hikaru',
+                title: null,
+            },
+            black: {
+                username: 'Oleksandr_Bortnyk',
+                title: null,
+            },
+        },
+        timeControl: {
+            initial: 60,
+            increment: 0,
+        },
+        opening: {
+            eco: '',
+            name: '',
+        },
+    })
+
+    expect(formattedGame.moves).toBeInstanceOf(Array)
+    expect(formattedGame.moves[0]).toBeInstanceOf(Object)
+    expect(formattedGame.moves[0].notation.notation).toBe('e3')
+})
+
 test('format chesscom game (daily game)', () => {
     let game = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/game-daily.json', 'utf-8'))
 
