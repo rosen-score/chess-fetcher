@@ -108,6 +108,13 @@ test('format chesscom arena game', () => {
     expect(formattedGame.moves[0].notation.notation).toBe('e3')
 })
 
+test('format chesscom 960 game', () => {
+    let game = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/game-960.json', 'utf-8'))
+    let formattedGame = formatGame(game)
+
+    expect(formattedGame.moves).toStrictEqual([])
+})
+
 test('format chesscom game (daily game)', () => {
     let game = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/game-daily.json', 'utf-8'))
 
