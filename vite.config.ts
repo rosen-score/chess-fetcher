@@ -3,11 +3,13 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
     test: {
-        globalSetup: 'tests/mock-server/server.ts',
+        coverage: {
+            provider: 'istanbul',
+        },
         deps: {
             interopDefault: true,
         },
-        teardownTimeout: 5000,
+        globalSetup: 'tests/mock-server/server.ts',
         reporters: ['default', 'hanging-process'],
     },
 })
