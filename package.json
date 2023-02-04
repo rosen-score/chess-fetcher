@@ -12,6 +12,7 @@
     },
     "devDependencies": {
         "@fastify/static": "^6.4.0",
+        "@mliebelt/pgn-types": "^1.0.3",
         "@vitest/coverage-istanbul": "^0.28.3",
         "fastify": "^4.0.0",
         "prettier": "^2.6.2",
@@ -20,7 +21,7 @@
         "vitest": "^0.28.0"
     },
     "dependencies": {
-        "@mliebelt/pgn-parser": "^1.4.4",
+        "@mliebelt/pgn-parser": "^1.4.6",
         "fetch-ndjson": "^1.1.7"
     },
     "main": "dist/src/api.js",
