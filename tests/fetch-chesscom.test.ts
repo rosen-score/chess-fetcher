@@ -4,6 +4,7 @@ import {
     archives,
     game,
     playerGames,
+    playerGamesForMonth,
     profile,
     stats,
     titledPlayers,
@@ -30,6 +31,17 @@ test('fetch single month archive', async () => {
     expect.hasAssertions()
     await archive('https://api.chess.com/pub/player/imrosen/games/2022/05').then((data) => {
         expect(data.games).toHaveLength(5)
+    })
+})
+
+test('fetch single month archive via method', async () => {
+    // there are 5 games in that month's archive
+    expect.assertions(5 + 1)
+
+    await playerGamesForMonth('imrosen', 2022, 5, (game) => {
+        expect(game.site).toBe('chess.com')
+    }).then((done) => {
+        expect(done).toBe(true)
     })
 })
 
@@ -209,6 +221,7 @@ test('not found', async () => {
 
     await expect(() => archives('user404')).rejects.toThrowError('404: Not Found')
     await expect(() => playerGames('user404', () => {})).rejects.toThrowError('404: Not Found')
+    await expect(() => playerGamesForMonth('user404', 2022, 5, () => {})).rejects.toThrowError('404: Not Found')
 
     await expect(() => tournamentGames('tournament404', () => {})).rejects.toThrowError('404: Not Found')
 })
@@ -220,6 +233,7 @@ test('rate limited', async () => {
 
     await expect(() => archives('user429')).rejects.toThrowError('429: Too Many Requests')
     await expect(() => playerGames('user429', () => {})).rejects.toThrowError('429: Too Many Requests')
+    await expect(() => playerGamesForMonth('user429', 2022, 5, () => {})).rejects.toThrowError('429: Too Many Requests')
 
     await expect(() => tournamentGames('tournament429', () => {})).rejects.toThrowError('429: Too Many Requests')
 

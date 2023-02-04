@@ -39,6 +39,25 @@ export function archive(archiveUrl: string): Promise<ChessComArchive> {
     })
 }
 
+export function playerGamesForMonth(
+    username: string,
+    year: number,
+    month: number,
+    callback: GameCallback
+): Promise<boolean> {
+    return new Promise(async (resolve, reject) => {
+        let month2digit: string = ('0' + month.toString()).slice(-2)
+        await archive(`https://api.chess.com/pub/player/${username}/games/${year}/${month2digit}`)
+            .then((json) => {
+                for (let game of json.games) {
+                    callback(formatGame(game))
+                }
+            })
+            .then(() => resolve(true))
+            .catch((error) => reject(error))
+    })
+}
+
 export function playerGames(
     username: string,
     callback: GameCallback,

@@ -1,4 +1,4 @@
-import { PgnMove } from '@mliebelt/pgn-parser'
+import { PgnMove } from '@mliebelt/pgn-types'
 
 export type ChessSite = 'lichess' | 'chess.com'
 

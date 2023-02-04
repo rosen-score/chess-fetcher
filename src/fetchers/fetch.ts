@@ -126,6 +126,7 @@ function getMockServerEndpoint(url: string): string {
         'https://api.chess.com/pub/player/user404': '/status/404',
         'https://api.chess.com/pub/player/user404/stats': '/status/404',
         'https://api.chess.com/pub/player/user404/games/archives': '/status/404',
+        'https://api.chess.com/pub/player/user404/games/2022/05': '/status/404',
         'https://api.chess.com/pub/tournament/tournament404': '/status/404',
 
         'https://api.chess.com/pub/player/user429': '/status/429',
