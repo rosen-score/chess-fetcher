@@ -3,6 +3,95 @@ import { formatGame, getResult, formatTournament, formatProfile } from '../src/f
 import { readFileSync } from 'fs'
 import { LichessGame, Result } from '../src/types'
 
+test('format lichess game (w/ PGN + clocks)', () => {
+    // sample game from:
+    // curl -H 'Accept: application/json' 'https://lichess.org/game/export/6sHZIw5F?pgnInJson=true&evals=false'
+    let input: LichessGame = {
+        id: '6sHZIw5F',
+        rated: true,
+        variant: 'standard',
+        speed: 'bullet',
+        perf: 'bullet',
+        createdAt: 1653281234416,
+        lastMoveAt: 1653281321482,
+        status: 'mate',
+        players: {
+            white: { user: { name: 'patzerplay', title: 'NM', id: 'patzerplay' }, rating: 2591, ratingDiff: -4 },
+            black: {
+                user: { name: 'EricRosen', title: 'IM', patron: true, id: 'ericrosen' },
+                rating: 2707,
+                ratingDiff: 4,
+            },
+        },
+        winner: 'black',
+        opening: { eco: 'C21', name: 'Center Game: Lanc-Arnold Gambit', ply: 7 },
+        moves: 'e4 e5 Nf3 Bc5 d4 exd4 c3 d3 Bxd3 d6 O-O Nc6 h3 Nf6 Bg5 h6 Bh4 g5 Nxg5 hxg5 Bxg5 Rg8 h4 Ne5 Be2 Qe7 b4 Bb6 a4 a5 Na3 Qe6 Nc2 Nfg4 Nd4 Qg6 Qd2 Bd7 f4 Nc6 f5 Qh5 Rf4 Nce5 Raf1 Rxg5 hxg5 Qh2#',
+        clocks: [
+            6003, 6003, 5891, 5971, 5827, 5859, 5787, 5819, 5715, 5779, 5611, 5747, 5363, 5707, 5267, 5667, 5131, 5627,
+            4939, 5491, 4939, 5411, 4787, 5371, 4595, 4555, 4227, 4459, 4171, 4323, 4051, 4195, 3659, 4035, 3467, 3899,
+            2931, 3683, 2851, 3371, 2619, 3275, 2443, 3187, 1755, 3155, 1677, 3072,
+        ],
+        pgn: '[Event "Rated Bullet game"]\n[Site "https://lichess.org/6sHZIw5F"]\n[Date "2022.05.23"]\n[White "patzerplay"]\n[Black "EricRosen"]\n[Result "0-1"]\n[UTCDate "2022.05.23"]\n[UTCTime "04:47:14"]\n[WhiteElo "2591"]\n[BlackElo "2707"]\n[WhiteRatingDiff "-4"]\n[BlackRatingDiff "+4"]\n[WhiteTitle "NM"]\n[BlackTitle "IM"]\n[Variant "Standard"]\n[TimeControl "60+0"]\n[ECO "C21"]\n[Opening "Center Game: Lanc-Arnold Gambit"]\n[Termination "Normal"]\n\n1. e4 { [%clk 0:01:00] } 1... e5 { [%clk 0:01:00] } 2. Nf3 { [%clk 0:00:59] } 2... Bc5 { [%clk 0:01:00] } 3. d4 { [%clk 0:00:58] } 3... exd4 { [%clk 0:00:59] } 4. c3 { [%clk 0:00:58] } 4... d3 { [%clk 0:00:58] } 5. Bxd3 { [%clk 0:00:57] } 5... d6 { [%clk 0:00:58] } 6. O-O { [%clk 0:00:56] } 6... Nc6 { [%clk 0:00:57] } 7. h3 { [%clk 0:00:54] } 7... Nf6 { [%clk 0:00:57] } 8. Bg5 { [%clk 0:00:53] } 8... h6 { [%clk 0:00:57] } 9. Bh4 { [%clk 0:00:51] } 9... g5 { [%clk 0:00:56] } 10. Nxg5 { [%clk 0:00:49] } 10... hxg5 { [%clk 0:00:55] } 11. Bxg5 { [%clk 0:00:49] } 11... Rg8 { [%clk 0:00:54] } 12. h4 { [%clk 0:00:48] } 12... Ne5 { [%clk 0:00:54] } 13. Be2 { [%clk 0:00:46] } 13... Qe7 { [%clk 0:00:46] } 14. b4 { [%clk 0:00:42] } 14... Bb6 { [%clk 0:00:45] } 15. a4 { [%clk 0:00:42] } 15... a5 { [%clk 0:00:43] } 16. Na3 { [%clk 0:00:41] } 16... Qe6 { [%clk 0:00:42] } 17. Nc2 { [%clk 0:00:37] } 17... Nfg4 { [%clk 0:00:40] } 18. Nd4 { [%clk 0:00:35] } 18... Qg6 { [%clk 0:00:39] } 19. Qd2 { [%clk 0:00:29] } 19... Bd7 { [%clk 0:00:37] } 20. f4 { [%clk 0:00:29] } 20... Nc6 { [%clk 0:00:34] } 21. f5 { [%clk 0:00:26] } 21... Qh5 { [%clk 0:00:33] } 22. Rf4 { [%clk 0:00:24] } 22... Nce5 { [%clk 0:00:32] } 23. Raf1 { [%clk 0:00:18] } 23... Rxg5 { [%clk 0:00:32] } 24. hxg5 { [%clk 0:00:17] } 24... Qh2# { [%clk 0:00:31] } 0-1\n\n\n',
+        clock: { initial: 60, increment: 0, totalTime: 60 },
+    }
+
+    let formattedGame = formatGame(input)
+    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
+        moves: [],
+    })
+
+    expect(formattedGameMinusMoves).toEqual({
+        site: 'lichess',
+        type: 'game',
+        id: '6sHZIw5F',
+        links: {
+            white: `https://lichess.org/6sHZIw5F`,
+            black: `https://lichess.org/6sHZIw5F/black`,
+        },
+
+        timestamp: 1653281234416,
+        isStandard: true,
+
+        result: {
+            winner: 'black',
+            via: 'checkmate',
+            label: '0-1',
+        },
+
+        moves: [],
+        clocks: [
+            6003, 6003, 5891, 5971, 5827, 5859, 5787, 5819, 5715, 5779, 5611, 5747, 5363, 5707, 5267, 5667, 5131, 5627,
+            4939, 5491, 4939, 5411, 4787, 5371, 4595, 4555, 4227, 4459, 4171, 4323, 4051, 4195, 3659, 4035, 3467, 3899,
+            2931, 3683, 2851, 3371, 2619, 3275, 2443, 3187, 1755, 3155, 1677, 3072,
+        ],
+        players: {
+            white: {
+                username: 'patzerplay',
+                title: 'NM',
+                rating: 2591,
+            },
+            black: {
+                username: 'EricRosen',
+                title: 'IM',
+                rating: 2707,
+            },
+        },
+        timeControl: {
+            initial: 60,
+            increment: 0,
+        },
+        opening: {
+            name: 'Center Game: Lanc-Arnold Gambit',
+            eco: 'C21',
+        },
+    })
+
+    expect(formattedGame.moves).toBeInstanceOf(Array)
+    expect(formattedGame.moves[0]).toBeInstanceOf(Object)
+    expect(formattedGame.moves[0].notation.notation).toBe('e4')
+    expect(formattedGame.moves.length).toBe(input.moves?.split(' ').length)
+})
+
 test('format lichess game (w/ PGN)', () => {
     // sample game from:
     // curl -H 'Accept: application/json' 'https://lichess.org/game/export/6sHZIw5F?pgnInJson=true&evals=false'
@@ -58,6 +147,7 @@ test('format lichess game (w/ PGN)', () => {
         },
 
         moves: [],
+        clocks: [],
         players: {
             white: {
                 username: 'patzerplay',
@@ -140,6 +230,7 @@ test('format lichess game (w/o PGN)', () => {
         },
 
         moves: [],
+        clocks: [],
         players: {
             white: {
                 username: 'patzerplay',

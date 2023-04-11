@@ -95,11 +95,11 @@ export type ChessComTournament = {
 }
 
 export type ChessComArchives = {
-    archives: Array<string>
+    archives: string[]
 }
 
 export type ChessComArchive = {
-    games: Array<ChessComGame>
+    games: ChessComGame[]
 }
 
 export type ChessComGame = {
@@ -333,6 +333,7 @@ export type LichessGame = {
         ply: number
     }
     pgn?: string
+    clocks?: number[]
     initialFen?: string
     clock: LichessTimeControl
 }
@@ -382,7 +383,8 @@ export interface Game extends BaseObject {
         eco: string
         name: string
     }
-    moves: Array<PgnMove>
+    moves: PgnMove[]
+    clocks: number[]
 }
 
 export type GameCallback = (game: Game) => void

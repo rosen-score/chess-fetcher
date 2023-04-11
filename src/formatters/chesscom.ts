@@ -17,6 +17,7 @@ import {
     ChessComPlayer,
 } from '../types'
 import { getResultStringForColor } from './utils'
+import { PgnMove } from '@mliebelt/pgn-types'
 
 export function formatTournament(json: ChessComTournament): Tournament {
     const id = json.url.substring(json.url.lastIndexOf('/') + 1)
@@ -46,6 +47,8 @@ export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): G
 
     const id = json.url.substring(json.url.lastIndexOf('/') + 1)
 
+    const pgnMoves = isStandard ? getMovesFromPgn(json.pgn) : []
+
     return {
         site: 'chess.com',
         type: 'game',
@@ -68,13 +71,37 @@ export function formatGame(json: ChessComGame, titledPlayers?: TitledPlayers): G
         // Ignore moves from non-standard games for now
         // When the pgn-parser package tried to parse a Crazyhouse game,
         // it errored when it found the `@` symbol
-        moves: isStandard ? getMovesFromPgn(json.pgn) : [],
+        moves: pgnMoves,
+
+        clocks: getClocksFromPgn(pgnMoves),
 
         opening: {
             name: '',
             eco: '',
         },
     }
+}
+
+function getClocksFromPgn(moves: PgnMove[]): number[] {
+    let clocks: number[] = []
+
+    for (let move of moves) {
+        if (move.commentDiag?.clk) {
+            clocks.push(convertTimestampToCentiseconds(move.commentDiag.clk))
+        }
+    }
+
+    return clocks
+}
+
+function convertTimestampToCentiseconds(timestamp: string): number {
+    // convert a string like HH:MM:SS.SS to centiseconds
+    let parts = timestamp.split(':')
+    let hours = parseInt(parts[0])
+    let minutes = parseInt(parts[1])
+    let seconds = parseFloat(parts[2])
+
+    return Math.round((hours * 60 * 60 + minutes * 60 + seconds) * 100)
 }
 
 function getMovesFromPgn(pgn: string) {
