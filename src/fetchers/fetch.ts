@@ -113,7 +113,8 @@ function getMockServerEndpoint(url: string): string {
         'https://api.chess.com/pub/titled/WIM': '/chesscom/titled/WIM.json',
         'https://api.chess.com/pub/titled/WNM': '/chesscom/titled/WNM.json',
 
-        'https://www.chess.com/callback/live/game/45328864849': '/chesscom/game.json',
+        'https://www.chess.com/callback/live/game/45328864849': '/chesscom/game-45328864849.json',
+        'https://www.chess.com/callback/live/game/45331170609': '/chesscom/game-45331170609.json',
         'https://www.chess.com/callback/live/game/999': '/chesscom/game-missing-from-archive.json',
 
         'https://api.chess.com/pub/tournament/late-titled-tuesday-blitz-june-07-2022-3192103': '/chesscom/swiss.json',

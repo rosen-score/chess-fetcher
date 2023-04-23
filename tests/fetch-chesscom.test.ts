@@ -181,8 +181,13 @@ test('fetch tournament games (swiss)', async () => {
 })
 
 test('fetch individual game', async () => {
-    expect.hasAssertions()
+    expect.assertions(2)
+
     await game('https://www.chess.com/game/live/45328864849').then((data) => {
+        expect(data.site).toBe('chess.com')
+    })
+
+    await game('https://www.chess.com/game/live/45331170609').then((data) => {
         expect(data.site).toBe('chess.com')
     })
 })

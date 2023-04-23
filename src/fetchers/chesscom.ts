@@ -151,9 +151,9 @@ export function game(url: string): Promise<Game> {
                             resolve(formatGame(game))
                             return
                         }
-
-                        reject(new Error('Game not found in monthly archive'))
                     }
+
+                    reject(new Error('Game not found in monthly archive'))
                 })
             })
         })
