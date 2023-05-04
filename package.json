@@ -13,12 +13,12 @@
     "devDependencies": {
         "@fastify/static": "^6.4.0",
         "@mliebelt/pgn-types": "^1.0.3",
-        "@vitest/coverage-istanbul": "^0.30.0",
+        "@vitest/coverage-istanbul": "^0.31.0",
         "fastify": "^4.0.0",
         "prettier": "^2.6.2",
         "ts-node": "^10.8.0",
         "typescript": "^5.0.0",
-        "vitest": "^0.30.0"
+        "vitest": "^0.31.0"
     },
     "dependencies": {
         "@mliebelt/pgn-parser": "^1.4.6",
