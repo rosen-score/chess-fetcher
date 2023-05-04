@@ -74,6 +74,32 @@ export async function games(url: string, callback: GameCallback, params: Lichess
     })
 }
 
+export async function teamMembers(teamId: string, callback: (player: Profile) => void): Promise<boolean> {
+    let response = await fetchFromEndpoint(`https://lichess.org/api/team/${teamId}/users`, {
+        headers: {
+            Accept: 'application/x-ndjson',
+        },
+    })
+
+    checkForServerError(response)
+
+    return new Promise(async (resolve) => {
+        let reader = response.body!.getReader()
+        let gen = ndjson(reader)
+
+        while (true) {
+            let { done, value } = await gen.next()
+
+            if (done) {
+                resolve(true)
+                return
+            }
+
+            callback(formatProfile(value))
+        }
+    })
+}
+
 export function game(url: string): Promise<Game> {
     let gameId = new URL(url).pathname.split('/')[1]
 

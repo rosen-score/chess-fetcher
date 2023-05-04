@@ -247,6 +247,8 @@ export type LichessArena = {
 export type LichessPlayer = {
     id: string
     username: string
+    disabled: boolean
+    tosViolation: boolean
     perfs: {
         bullet: {
             games: number
@@ -285,7 +287,7 @@ export type LichessPlayer = {
         tv: number
     }
     url: string
-    count: {
+    count?: {
         all: number
     }
     followable: boolean
@@ -419,21 +421,24 @@ export type GameResultString = '1-0' | '0-1' | '½-½' | '*'
 export interface Profile extends BaseObject {
     link: string
     username: string
-    title: string
-    createdAt: number
-    lastSeenAt: number
-    name: string
-    location: string
+    title?: string
+    createdAt?: number
+    lastSeenAt?: number
+    name?: string
+    location?: string
 
-    ratings: {
+    ratings?: {
         bullet: Rating
         blitz: Rating
         rapid: Rating
     }
 
-    counts: {
-        all: number
+    counts?: {
+        all?: number
     }
+
+    disabled?: boolean
+    marked?: boolean
 }
 
 type Rating = {

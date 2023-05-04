@@ -1,0 +1,43 @@
+{
+    "id": "marked-user",
+    "username": "marked-user",
+    "perfs": {
+        "chess960": { "games": 43, "rating": 1896, "rd": 107, "prog": 94 },
+        "blitz": { "games": 7053, "rating": 2218, "rd": 45, "prog": -5 },
+        "kingOfTheHill": { "games": 5, "rating": 1812, "rd": 200, "prog": 0, "prov": true },
+        "crazyhouse": { "games": 105, "rating": 1919, "rd": 81, "prog": -19 },
+        "threeCheck": { "games": 20, "rating": 1542, "rd": 126, "prog": 66, "prov": true },
+        "streak": { "runs": 412, "score": 75 },
+        "storm": { "runs": 13, "score": 35 },
+        "bullet": { "games": 73, "rating": 2025, "rd": 95, "prog": 41 },
+        "correspondence": { "games": 0, "rating": 1500, "rd": 500, "prog": 0, "prov": true },
+        "horde": { "games": 19, "rating": 1684, "rd": 125, "prog": -36, "prov": true },
+        "puzzle": { "games": 1887, "rating": 2622, "rd": 64, "prog": 0 },
+        "classical": { "games": 157, "rating": 2149, "rd": 80, "prog": 35 },
+        "rapid": { "games": 119, "rating": 2172, "rd": 106, "prog": 249 }
+    },
+    "tosViolation": true,
+    "createdAt": 1507527232212,
+    "seenAt": 1683240102192,
+    "playTime": { "total": 3647874, "tv": 15922 },
+    "url": "https://lichess.org/@/marked-user",
+    "count": {
+        "all": 7882,
+        "rated": 7600,
+        "ai": 201,
+        "draw": 428,
+        "drawH": 407,
+        "loss": 3512,
+        "lossH": 3381,
+        "win": 3942,
+        "winH": 3893,
+        "bookmark": 0,
+        "playing": 0,
+        "import": 5,
+        "me": 0
+    },
+    "followable": true,
+    "following": false,
+    "blocking": false,
+    "followsYou": false
+}

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import { game, games, info, player, tournament } from '../src/api'
+import { game, games, info, player, players, tournament } from '../src/api'
 import { addLichessOauthToken, fetchFromEndpoint, resetOauthToken } from '../src/fetchers/fetch'
 
 describe('fetching a player profile', () => {
@@ -15,6 +15,17 @@ describe('fetching a player profile', () => {
         await player('https://www.chess.com/member/imrosen').then((data) => {
             expect(data.site).toStrictEqual('chess.com')
             expect(data.username).toStrictEqual('IMRosen')
+        })
+    })
+})
+
+describe('fetching players of a team', () => {
+    test('from lichess', async () => {
+        expect.assertions(2 + 1)
+        await players('https://lichess.org/team/test-team', (player) => {
+            expect(player.site).toBe('lichess')
+        }).then((done) => {
+            expect(done).toBe(true)
         })
     })
 })
@@ -177,6 +188,10 @@ describe('test invalid inputs', () => {
         expect(() => player('invalid-input')).toThrowError(
             'Must specify the URL to a Lichess or Chess.com player profile'
         )
+    })
+
+    test('for team members', () => {
+        expect(() => players('invalid-input', () => {})).toThrowError('Must specify the URL of a Lichess team')
     })
 
     test('for tournament', () => {

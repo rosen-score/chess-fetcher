@@ -165,6 +165,16 @@ function getTimeControl(time_control: LichessTimeControl): TimeControl {
 }
 
 export function formatProfile(player: LichessPlayer): Profile {
+    if (player.disabled) {
+        return {
+            site: 'lichess',
+            type: 'profile',
+            username: player.username,
+            link: `https://lichess.org/@/${player.username}`,
+            disabled: true,
+        }
+    }
+
     let name = [player.profile?.firstName, player.profile?.lastName].join(' ').trim()
 
     return {
@@ -194,8 +204,12 @@ export function formatProfile(player: LichessPlayer): Profile {
             },
         },
 
-        counts: {
-            all: player.count.all,
-        },
+        counts: player.count?.all
+            ? {
+                  all: player.count.all,
+              }
+            : {},
+
+        marked: player.tosViolation || false,
     }
 }

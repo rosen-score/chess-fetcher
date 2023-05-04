@@ -387,6 +387,8 @@ test('format lichess player', () => {
         counts: {
             all: 28015,
         },
+
+        marked: false,
     })
 })
 
@@ -419,9 +421,9 @@ test('format lichess player with blank profile', () => {
             },
         },
 
-        counts: {
-            all: 0,
-        },
+        counts: {},
+
+        marked: false,
     })
 })
 

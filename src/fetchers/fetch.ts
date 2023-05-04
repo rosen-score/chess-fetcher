@@ -65,6 +65,8 @@ function getMockServerEndpoint(url: string): string {
 
         'https://lichess.org/api/user/EricRosen': '/lichess/player.json',
         'https://lichess.org/api/user/blank-user': '/lichess/player-without-profile.json',
+        'https://lichess.org/api/user/deleted-user': '/lichess/deleted-user.json',
+        'https://lichess.org/api/user/marked-user': '/lichess/marked-user.json',
 
         'https://lichess.org/game/export/KSMY85yj?pgnInJson=true&clocks=true': '/lichess/game.json',
 
@@ -74,6 +76,7 @@ function getMockServerEndpoint(url: string): string {
         'https://lichess.org/api/games/user/EricRosen': '/ndjson/lichess/games',
         'https://lichess.org/api/tournament/2oEh6hZw/games': '/ndjson/lichess/games',
         'https://lichess.org/api/swiss/48jrx3m6/games': '/ndjson/lichess/games',
+        'https://lichess.org/api/team/test-team/users': '/ndjson/lichess/team-members',
 
         'https://lichess.org/api/games/user/EricRosen?since=16557255145620': '/ndjson/lichess/games-with-since-filter',
         'https://lichess.org/api/games/user/user-with-no-games': '/ndjson/lichess/games-empty',

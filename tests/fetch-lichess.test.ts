@@ -1,10 +1,44 @@
 import { expect, test, vi } from 'vitest'
-import { profile, arena, swiss, playerGames, arenaGames, swissGames, qs, games, game } from '../src/fetchers/lichess'
+import {
+    profile,
+    arena,
+    swiss,
+    playerGames,
+    arenaGames,
+    swissGames,
+    qs,
+    games,
+    game,
+    teamMembers,
+} from '../src/fetchers/lichess'
 
 test('fetch player', async () => {
     expect.hasAssertions()
     await profile('EricRosen').then((data) => {
         expect(data.site).toStrictEqual('lichess')
+    })
+})
+
+test('fetch player with deleted account', async () => {
+    expect.hasAssertions()
+    await profile('deleted-user').then((data) => {
+        expect(data.disabled).toStrictEqual(true)
+    })
+})
+
+test('fetch player with marked account', async () => {
+    expect.hasAssertions()
+    await profile('marked-user').then((data) => {
+        expect(data.marked).toStrictEqual(true)
+    })
+})
+
+test('fetch players of a team', async () => {
+    expect.assertions(2 + 1)
+    await teamMembers('test-team', (game) => {
+        expect(game.site).toBe('lichess')
+    }).then((done) => {
+        expect(done).toBe(true)
     })
 })
 

@@ -6,6 +6,7 @@ import {
     playerGames as lichessPlayerGames,
     arenaGames as lichessArenaGames,
     swissGames as lichessSwissGames,
+    teamMembers,
 } from './fetchers/lichess'
 import {
     profile as chesscomProfile,
@@ -38,6 +39,24 @@ export function player(url: string): Promise<Profile> {
     }
 
     throw new Error('Must specify the URL to a Lichess or Chess.com player profile')
+}
+
+/**
+ * Fetch info for multiple players
+ *
+ * @param url URL of a Lichess team
+ * @param callback Function to call for each player. The function will be passed a Player object.
+ * @returns Promise when all players are fetched
+ * @throws Error if the URL is invalid
+ */
+export function players(url: string, callback: (player: Profile) => void): Promise<boolean> {
+    const team = url.substring(url.lastIndexOf('/') + 1)
+
+    if (url.startsWith('https://lichess.org/team/')) {
+        return teamMembers(team, callback)
+    }
+
+    throw new Error('Must specify the URL of a Lichess team')
 }
 
 /**
