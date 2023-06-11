@@ -312,6 +312,23 @@ type LichessGameUser = {
     rating: number
     ratingDiff?: number
     provisional?: boolean
+    analysis?: {
+        inaccuracy: number
+        mistake: number
+        blunder: number
+        acpl: number
+    }
+}
+
+type Analysis = {
+    eval?: number
+    mate?: number
+    best?: string
+    variation?: string
+    judgment?: {
+        name: string
+        comment: string
+    }
 }
 
 export type LichessGame = {
@@ -338,6 +355,7 @@ export type LichessGame = {
     clocks?: number[]
     initialFen?: string
     clock: LichessTimeControl
+    analysis?: Analysis[]
 }
 
 export type Title = 'CM' | 'FM' | 'GM' | 'IM' | 'NM' | 'WCM' | 'WFM' | 'WGM' | 'WIM' | 'WNM' | 'BOT' | null
@@ -387,6 +405,7 @@ export interface Game extends BaseObject {
     }
     moves: PgnMove[]
     clocks: number[]
+    analysis?: Analysis[]
 }
 
 export type GameCallback = (game: Game) => void

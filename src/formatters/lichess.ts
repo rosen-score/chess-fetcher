@@ -87,6 +87,7 @@ export function formatGame(json: LichessGame): Game {
                 ? parseGame(json.pgn || json.moves, { startRule: 'game' }).moves
                 : [],
         clocks: json.clocks || [],
+        analysis: json.analysis || [],
     }
 }
 
