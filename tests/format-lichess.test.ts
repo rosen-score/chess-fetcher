@@ -50,6 +50,7 @@ test('format lichess game (w/ PGN + clocks)', () => {
         },
 
         timestamp: 1653281234416,
+        lastMoveAt: 1653281321482,
         isStandard: true,
 
         result: {
@@ -139,6 +140,7 @@ test('format lichess game (w/ PGN)', () => {
         },
 
         timestamp: 1653281234416,
+        lastMoveAt: 1653281321482,
         isStandard: true,
 
         result: {
@@ -223,6 +225,7 @@ test('format lichess game (w/o PGN)', () => {
         },
 
         timestamp: 1653281234416,
+        lastMoveAt: 1653281321482,
         isStandard: true,
 
         result: {

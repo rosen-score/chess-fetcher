@@ -389,6 +389,7 @@ export interface Game extends BaseObject {
     }
 
     timestamp: number
+    lastMoveAt?: number
     isStandard: boolean
 
     result: Result

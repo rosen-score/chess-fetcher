@@ -62,6 +62,7 @@ export function formatGame(json: LichessGame): Game {
         },
 
         timestamp: json.createdAt,
+        lastMoveAt: json.lastMoveAt,
         isStandard: json.variant === 'standard',
         players: {
             white: {
