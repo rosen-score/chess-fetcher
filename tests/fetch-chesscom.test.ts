@@ -84,62 +84,61 @@ test('fetch player games w/ max filter', async () => {
     expect(matchingGameIds).toStrictEqual(['45331880249', '45331170609'])
 })
 
-test('fetch titled players', () => {
-    return titledPlayers().then((players) => {
-        expect(players).toStrictEqual({
-            zhigalko_sergei: 'GM',
-            ajian: 'NM',
-            imrosen: 'IM',
-            'player-cm': 'CM',
-            'player-fm': 'FM',
-            'player-gm': 'GM',
-            'player-im': 'IM',
-            'player-nm': 'NM',
-            'player-wcm': 'WCM',
-            'player-wfm': 'WFM',
-            'player-wgm': 'WGM',
-            'player-wim': 'WIM',
-            'player-wnm': 'WNM',
+test('fetch titled players', async () => {
+    const players = await titledPlayers()
 
-            'computer4-impossible': 'BOT',
-            stockfish: 'BOT',
-            komodo1: 'BOT',
-            komodo2: 'BOT',
-            komodo3: 'BOT',
-            komodo4: 'BOT',
-            komodo5: 'BOT',
-            komodo6: 'BOT',
-            komodo7: 'BOT',
-            komodo8: 'BOT',
-            komodo9: 'BOT',
-            komodo10: 'BOT',
-            komodo11: 'BOT',
-            komodo12: 'BOT',
-            komodo13: 'BOT',
-            komodo14: 'BOT',
-            komodo15: 'BOT',
-            komodo16: 'BOT',
-            komodo17: 'BOT',
-            komodo18: 'BOT',
-            komodo19: 'BOT',
-            komodo20: 'BOT',
-            komodo21: 'BOT',
-            komodo22: 'BOT',
-            komodo23: 'BOT',
-            komodo24: 'BOT',
-            komodo25: 'BOT',
-        })
+    expect(players).toStrictEqual({
+        zhigalko_sergei: 'GM',
+        ajian: 'NM',
+        imrosen: 'IM',
+        'player-cm': 'CM',
+        'player-fm': 'FM',
+        'player-gm': 'GM',
+        'player-im': 'IM',
+        'player-nm': 'NM',
+        'player-wcm': 'WCM',
+        'player-wfm': 'WFM',
+        'player-wgm': 'WGM',
+        'player-wim': 'WIM',
+        'player-wnm': 'WNM',
+
+        'computer4-impossible': 'BOT',
+        stockfish: 'BOT',
+        komodo1: 'BOT',
+        komodo2: 'BOT',
+        komodo3: 'BOT',
+        komodo4: 'BOT',
+        komodo5: 'BOT',
+        komodo6: 'BOT',
+        komodo7: 'BOT',
+        komodo8: 'BOT',
+        komodo9: 'BOT',
+        komodo10: 'BOT',
+        komodo11: 'BOT',
+        komodo12: 'BOT',
+        komodo13: 'BOT',
+        komodo14: 'BOT',
+        komodo15: 'BOT',
+        komodo16: 'BOT',
+        komodo17: 'BOT',
+        komodo18: 'BOT',
+        komodo19: 'BOT',
+        komodo20: 'BOT',
+        komodo21: 'BOT',
+        komodo22: 'BOT',
+        komodo23: 'BOT',
+        komodo24: 'BOT',
+        komodo25: 'BOT',
     })
 })
 
-test('fetch titled players of a specific title', () => {
-    return titledPlayers(['GM', 'IM']).then((players) => {
-        expect(players).toStrictEqual({
-            zhigalko_sergei: 'GM',
-            imrosen: 'IM',
-            'player-gm': 'GM',
-            'player-im': 'IM',
-        })
+test('fetch titled players of a specific title', async () => {
+    const players = await titledPlayers(['GM', 'IM'])
+    expect(players).toStrictEqual({
+        zhigalko_sergei: 'GM',
+        imrosen: 'IM',
+        'player-gm': 'GM',
+        'player-im': 'IM',
     })
 })
 

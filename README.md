@@ -22,6 +22,12 @@ games('https://lichess.org/@/DrNykterstein', (game) => {
 }).then(() => console.log('done'))
 ```
 
+### Demo
+
+```bash
+npx tsx demo.ts
+```
+
 ## Development Notes
 
 ### How to release a new version

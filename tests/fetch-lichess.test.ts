@@ -135,7 +135,7 @@ test('individual game', async () => {
 test('individual game against stockfish', async () => {
     expect.assertions(1)
     await game('https://lichess.org/s0ZUbs1B').then((data) => {
-        expect(data.players.white.username).toBeUndefined();
+        expect(data.players.white.username).toBeUndefined()
     })
 })
 
