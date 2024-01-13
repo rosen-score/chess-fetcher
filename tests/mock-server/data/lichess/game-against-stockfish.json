@@ -1,0 +1,265 @@
+{
+    "analysis": [
+        {
+            "eval": 33
+        },
+        {
+            "eval": 32
+        },
+        {
+            "eval": 0
+        },
+        {
+            "eval": 26
+        },
+        {
+            "eval": 17
+        },
+        {
+            "eval": 18
+        },
+        {
+            "eval": 0
+        },
+        {
+            "eval": 0
+        },
+        {
+            "eval": -2
+        },
+        {
+            "eval": 9
+        },
+        {
+            "eval": 0
+        },
+        {
+            "eval": 22
+        },
+        {
+            "eval": 15
+        },
+        {
+            "eval": 24
+        },
+        {
+            "eval": 34
+        },
+        {
+            "eval": 76
+        },
+        {
+            "eval": 71
+        },
+        {
+            "eval": 72
+        },
+        {
+            "eval": 65
+        },
+        {
+            "eval": 55
+        },
+        {
+            "eval": 112
+        },
+        {
+            "eval": 80
+        },
+        {
+            "eval": 127
+        },
+        {
+            "eval": 64
+        },
+        {
+            "eval": 81
+        },
+        {
+            "eval": 108
+        },
+        {
+            "eval": 115
+        },
+        {
+            "eval": 108
+        },
+        {
+            "eval": 116
+        },
+        {
+            "eval": 124
+        },
+        {
+            "eval": 150
+        },
+        {
+            "eval": 101
+        },
+        {
+            "eval": 88
+        },
+        {
+            "eval": 66
+        },
+        {
+            "eval": 67
+        },
+        {
+            "eval": 104
+        },
+        {
+            "eval": 93
+        },
+        {
+            "eval": 70
+        },
+        {
+            "eval": 89
+        },
+        {
+            "eval": 68
+        },
+        {
+            "eval": 103
+        },
+        {
+            "eval": 110
+        },
+        {
+            "eval": 104
+        },
+        {
+            "best": "e6e5",
+            "eval": 300,
+            "judgment": {
+                "comment": "Blunder. e5 was best.",
+                "name": "Blunder"
+            },
+            "variation": "e5 Nb3"
+        },
+        {
+            "eval": 260
+        },
+        {
+            "eval": 262
+        },
+        {
+            "eval": 281
+        },
+        {
+            "eval": 281
+        },
+        {
+            "eval": 278
+        },
+        {
+            "eval": 296
+        },
+        {
+            "eval": 282
+        },
+        {
+            "eval": 293
+        },
+        {
+            "eval": 295
+        },
+        {
+            "eval": 295
+        },
+        {
+            "eval": 332
+        },
+        {
+            "eval": 323
+        },
+        {
+            "eval": 350
+        },
+        {
+            "eval": 346
+        },
+        {
+            "eval": 376
+        },
+        {
+            "eval": 454
+        },
+        {
+            "eval": 493
+        },
+        {
+            "eval": 487
+        },
+        {
+            "eval": 488
+        },
+        {
+            "best": "c7d6",
+            "eval": 769,
+            "judgment": {
+                "comment": "Inaccuracy. Kd6 was best.",
+                "name": "Inaccuracy"
+            },
+            "variation": "Kd6 Bxc8"
+        },
+        {
+            "eval": 776
+        }
+    ],
+    "clock": {
+        "increment": 8,
+        "initial": 300,
+        "totalTime": 620
+    },
+    "clocks": [
+        30003, 30003, 30587, 30395, 31195, 31195, 31827, 31731, 32523, 32347, 32731, 32939, 33051, 33051, 33611, 32787,
+        34099, 33531, 34419, 29811, 34851, 29859, 35139, 27635, 35499, 23867, 35907, 17291, 36115, 14339, 36459, 9875,
+        36683, 5963, 37083, 5707, 37347, 3523, 37827, 4243, 38211, 4971, 38587, 5179, 38971, 5979, 39395, 4971, 39635,
+        5307, 39827, 5475, 40339, 5483, 40851, 5467, 41059, 5475, 41283, 5091, 41691, 5675, 42027, 6235, 42309, 5493
+    ],
+    "createdAt": 1660570241495,
+    "id": "s0ZUbs1B",
+    "lastMoveAt": 1660570893292,
+    "moves": "e4 c5 c3 d5 exd5 Qxd5 Nf3 Nf6 Be2 Nc6 d4 e6 O-O Be7 dxc5 Qxd1 Rxd1 Bxc5 Nbd2 O-O b4 Be7 b5 Nb8 a4 Nbd7 a5 Nc5 c4 Rd8 Ba3 Kf8 Ne5 Nfd7 Ndf3 f6 Nd3 Nxd3 Rxd3 Bxa3 Raxa3 Ke7 Nd2 Nc5 Rxd8 Kxd8 Rg3 g6 Rh3 h5 Rg3 g5 Bxh5 e5 h4 gxh4 Rg8+ Kc7 Bg4 b6 a6 Rb8 Rg7+ Bd7 Ne4",
+    "opening": {
+        "eco": "B22",
+        "name": "Sicilian Defense: Alapin Variation, Barmen Defense",
+        "ply": 6
+    },
+    "perf": "rapid",
+    "pgn": "[Event \"Casual Rapid game\"]\n[Site \"https://lichess.org/s0ZUbs1B\"]\n[Date \"2022.08.15\"]\n[White \"lichess AI level 8\"]\n[Black \"EricRosen\"]\n[Result \"1-0\"]\n[UTCDate \"2022.08.15\"]\n[UTCTime \"13:30:41\"]\n[WhiteElo \"?\"]\n[BlackElo \"2586\"]\n[BlackTitle \"IM\"]\n[Variant \"Standard\"]\n[TimeControl \"300+8\"]\n[ECO \"B22\"]\n[Opening \"Sicilian Defense: Alapin Variation, Barmen Defense\"]\n[Termination \"Normal\"]\n\n1. e4 { [%eval 0.33] [%clk 0:05:00] } 1... c5 { [%eval 0.32] [%clk 0:05:00] } 2. c3 { [%eval 0.0] [%clk 0:05:06] } 2... d5 { [%eval 0.26] [%clk 0:05:04] } 3. exd5 { [%eval 0.17] [%clk 0:05:12] } 3... Qxd5 { [%eval 0.18] [%clk 0:05:12] } 4. Nf3 { [%eval 0.0] [%clk 0:05:18] } 4... Nf6 { [%eval 0.0] [%clk 0:05:17] } 5. Be2 { [%eval -0.02] [%clk 0:05:25] } 5... Nc6 { [%eval 0.09] [%clk 0:05:23] } 6. d4 { [%eval 0.0] [%clk 0:05:27] } 6... e6 { [%eval 0.22] [%clk 0:05:29] } 7. O-O { [%eval 0.15] [%clk 0:05:31] } 7... Be7 { [%eval 0.24] [%clk 0:05:31] } 8. dxc5 { [%eval 0.34] [%clk 0:05:36] } 8... Qxd1 { [%eval 0.76] [%clk 0:05:28] } 9. Rxd1 { [%eval 0.71] [%clk 0:05:41] } 9... Bxc5 { [%eval 0.72] [%clk 0:05:35] } 10. Nbd2 { [%eval 0.65] [%clk 0:05:44] } 10... O-O { [%eval 0.55] [%clk 0:04:58] } 11. b4 { [%eval 1.12] [%clk 0:05:49] } 11... Be7 { [%eval 0.8] [%clk 0:04:59] } 12. b5 { [%eval 1.27] [%clk 0:05:51] } 12... Nb8 { [%eval 0.64] [%clk 0:04:36] } 13. a4 { [%eval 0.81] [%clk 0:05:55] } 13... Nbd7 { [%eval 1.08] [%clk 0:03:59] } 14. a5 { [%eval 1.15] [%clk 0:05:59] } 14... Nc5 { [%eval 1.08] [%clk 0:02:53] } 15. c4 { [%eval 1.16] [%clk 0:06:01] } 15... Rd8 { [%eval 1.24] [%clk 0:02:23] } 16. Ba3 { [%eval 1.5] [%clk 0:06:05] } 16... Kf8 { [%eval 1.01] [%clk 0:01:39] } 17. Ne5 { [%eval 0.88] [%clk 0:06:07] } 17... Nfd7 { [%eval 0.66] [%clk 0:01:00] } 18. Ndf3 { [%eval 0.67] [%clk 0:06:11] } 18... f6 { [%eval 1.04] [%clk 0:00:57] } 19. Nd3 { [%eval 0.93] [%clk 0:06:13] } 19... Nxd3 { [%eval 0.7] [%clk 0:00:35] } 20. Rxd3 { [%eval 0.89] [%clk 0:06:18] } 20... Bxa3 { [%eval 0.68] [%clk 0:00:42] } 21. Raxa3 { [%eval 1.03] [%clk 0:06:22] } 21... Ke7 { [%eval 1.1] [%clk 0:00:50] } 22. Nd2 { [%eval 1.04] [%clk 0:06:26] } 22... Nc5 { [%eval 3.0] [%clk 0:00:52] } 23. Rxd8 { [%eval 2.6] [%clk 0:06:30] } 23... Kxd8 { [%eval 2.62] [%clk 0:01:00] } 24. Rg3 { [%eval 2.81] [%clk 0:06:34] } 24... g6 { [%eval 2.81] [%clk 0:00:50] } 25. Rh3 { [%eval 2.78] [%clk 0:06:36] } 25... h5 { [%eval 2.96] [%clk 0:00:53] } 26. Rg3 { [%eval 2.82] [%clk 0:06:38] } 26... g5 { [%eval 2.93] [%clk 0:00:55] } 27. Bxh5 { [%eval 2.95] [%clk 0:06:43] } 27... e5 { [%eval 2.95] [%clk 0:00:55] } 28. h4 { [%eval 3.32] [%clk 0:06:49] } 28... gxh4 { [%eval 3.23] [%clk 0:00:55] } 29. Rg8+ { [%eval 3.5] [%clk 0:06:51] } 29... Kc7 { [%eval 3.46] [%clk 0:00:55] } 30. Bg4 { [%eval 3.76] [%clk 0:06:53] } 30... b6 { [%eval 4.54] [%clk 0:00:51] } 31. a6 { [%eval 4.93] [%clk 0:06:57] } 31... Rb8 { [%eval 4.87] [%clk 0:00:57] } 32. Rg7+ { [%eval 4.88] [%clk 0:07:00] } 32... Bd7 { [%eval 7.69] [%clk 0:01:02] } 33. Ne4 { [%eval 7.76] [%clk 0:07:03] } 1-0\n\n\n",
+    "players": {
+        "black": {
+            "analysis": {
+                "acpl": 24,
+                "blunder": 1,
+                "inaccuracy": 1,
+                "mistake": 0
+            },
+            "rating": 2586,
+            "user": {
+                "flair": "travel-places.ambulance",
+                "id": "ericrosen",
+                "name": "EricRosen",
+                "patron": true,
+                "title": "IM"
+            }
+        },
+        "white": {
+            "aiLevel": 8,
+            "analysis": {
+                "acpl": 5,
+                "blunder": 0,
+                "inaccuracy": 0,
+                "mistake": 0
+            }
+        }
+    },
+    "rated": false,
+    "speed": "rapid",
+    "status": "resign",
+    "variant": "standard",
+    "winner": "white"
+}

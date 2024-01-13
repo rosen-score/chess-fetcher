@@ -54,7 +54,7 @@ export type ChesscomGameParameters = {
 }
 
 export type GamePlayer = {
-    username: string
+    username?: string
     title: Title
     rating?: number
 }
@@ -303,13 +303,13 @@ export type LichessTimeControl = {
 }
 
 type LichessGameUser = {
-    user: {
+    user?: {
         name: string
         title?: Title
         patron?: boolean
         id: string
     }
-    rating: number
+    rating?: number
     ratingDiff?: number
     provisional?: boolean
     analysis?: {
@@ -318,6 +318,7 @@ type LichessGameUser = {
         blunder: number
         acpl: number
     }
+    aiLevel?: number
 }
 
 type Analysis = {

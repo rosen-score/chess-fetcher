@@ -69,6 +69,7 @@ function getMockServerEndpoint(url: string): string {
         'https://lichess.org/api/user/marked-user': '/lichess/marked-user.json',
 
         'https://lichess.org/game/export/KSMY85yj?pgnInJson=true&clocks=true': '/lichess/game.json',
+        'https://lichess.org/game/export/s0ZUbs1B?pgnInJson=true&clocks=true': '/lichess/game-against-stockfish.json',
 
         'https://lichess.org/api/tournament/2oEh6hZw': '/lichess/arena.json',
         'https://lichess.org/api/swiss/48jrx3m6': '/lichess/swiss.json',
