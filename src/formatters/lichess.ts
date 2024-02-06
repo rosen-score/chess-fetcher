@@ -67,12 +67,12 @@ export function formatGame(json: LichessGame): Game {
         players: {
             white: {
                 username: json.players.white.user?.name,
-                title: json.players.white.user?.title || null,
+                title: json.players.white.user?.title ?? null,
                 rating: json.players.white.rating,
             },
             black: {
                 username: json.players.black.user?.name,
-                title: json.players.black.user?.title || null,
+                title: json.players.black.user?.title ?? null,
                 rating: json.players.black.rating,
             },
         },
@@ -80,15 +80,15 @@ export function formatGame(json: LichessGame): Game {
 
         result: getResult(json),
         opening: {
-            name: json.opening?.name || '',
-            eco: json.opening?.eco || '',
+            name: json.opening?.name ?? '',
+            eco: json.opening?.eco ?? '',
         },
         moves:
             json.variant === 'standard' && json.moves
-                ? parseGame(json.pgn || json.moves, { startRule: 'game' }).moves
+                ? parseGame(json.pgn ?? json.moves, { startRule: 'game' }).moves
                 : [],
-        clocks: json.clocks || [],
-        analysis: json.analysis || [],
+        clocks: json.clocks ?? [],
+        analysis: json.analysis ?? [],
     }
 }
 
@@ -184,12 +184,12 @@ export function formatProfile(player: LichessPlayer): Profile {
         type: 'profile',
         link: player.url,
         username: player.username,
-        title: player.title || '',
+        title: player.title ?? '',
 
         createdAt: player.createdAt,
         lastSeenAt: player.seenAt,
         name: name,
-        location: player.profile?.location || '',
+        location: player.profile?.location ?? '',
 
         ratings: {
             bullet: {
@@ -212,6 +212,6 @@ export function formatProfile(player: LichessPlayer): Profile {
               }
             : {},
 
-        marked: player.tosViolation || false,
+        marked: player.tosViolation ?? false,
     }
 }

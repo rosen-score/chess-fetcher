@@ -36,9 +36,12 @@ test('format lichess game (w/ PGN + clocks)', () => {
     }
 
     let formattedGame = formatGame(input)
-    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
-        moves: [],
-    })
+    let formattedGameMinusMoves = {
+        ...formattedGame,
+        ...{
+            moves: [],
+        },
+    }
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'lichess',
@@ -126,9 +129,12 @@ test('format lichess game (w/ PGN)', () => {
     }
 
     let formattedGame = formatGame(input)
-    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
-        moves: [],
-    })
+    let formattedGameMinusMoves = {
+        ...formattedGame,
+        ...{
+            moves: [],
+        },
+    }
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'lichess',
@@ -211,9 +217,12 @@ test('format lichess game (w/o PGN)', () => {
     }
 
     let formattedGame = formatGame(input)
-    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
-        moves: [],
-    })
+    let formattedGameMinusMoves = {
+        ...formattedGame,
+        ...{
+            moves: [],
+        },
+    }
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'lichess',
@@ -542,7 +551,7 @@ test('test game end by cheat detection (same position in analysis board)', () =>
 
 describe('test invalid result', () => {
     test.each<Partial<LichessGame>>([{ status: 'invalidresult' }])('test results', async (input) => {
-        await expect(() => getResult(input)).toThrowError(/Unexpected result/)
+        expect(() => getResult(input)).toThrowError(/Unexpected result/)
     })
 })
 

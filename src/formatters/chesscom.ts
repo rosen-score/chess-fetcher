@@ -249,24 +249,24 @@ export function formatProfile(player: ChessComPlayer, ratings: ChesscomStats): P
         type: 'profile',
         link: player.url,
         username,
-        title: player.title || '',
+        title: player.title ?? '',
 
         createdAt: player.joined * 1000,
         lastSeenAt: player.last_online * 1000,
-        name: player.name || '',
-        location: player.location || '',
+        name: player.name ?? '',
+        location: player.location ?? '',
 
         ratings: {
             bullet: {
-                rating: ratings.chess_bullet?.last.rating || 0,
+                rating: ratings.chess_bullet?.last.rating ?? 0,
                 games: ratings.chess_bullet ? sumValuesOfObject(ratings.chess_bullet.record) : 0,
             },
             blitz: {
-                rating: ratings.chess_blitz?.last.rating || 0,
+                rating: ratings.chess_blitz?.last.rating ?? 0,
                 games: ratings.chess_blitz ? sumValuesOfObject(ratings.chess_blitz.record) : 0,
             },
             rapid: {
-                rating: ratings.chess_rapid?.last.rating || 0,
+                rating: ratings.chess_rapid?.last.rating ?? 0,
                 games: ratings.chess_rapid ? sumValuesOfObject(ratings.chess_rapid.record) : 0,
             },
         },

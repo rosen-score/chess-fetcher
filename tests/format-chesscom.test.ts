@@ -8,9 +8,12 @@ test('format chesscom game', () => {
     let game = games.games[0]
 
     let formattedGame = formatGame(game)
-    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
-        moves: [],
-    })
+    let formattedGameMinusMoves = {
+        ...formattedGame,
+        ...{
+            moves: [],
+        },
+    }
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'chess.com',
@@ -70,9 +73,12 @@ test('format chesscom arena game', () => {
     let game = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/arena-game.json', 'utf-8'))
 
     let formattedGame = formatGame(game)
-    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
-        moves: [],
-    })
+    let formattedGameMinusMoves = {
+        ...formattedGame,
+        ...{
+            moves: [],
+        },
+    }
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'chess.com',
@@ -138,9 +144,12 @@ test('format chesscom game (daily game)', () => {
     let game = JSON.parse(readFileSync(__dirname + '/mock-server/data/chesscom/game-daily.json', 'utf-8'))
 
     let formattedGame = formatGame(game)
-    let formattedGameMinusMoves = Object.assign({}, formattedGame, {
-        moves: [],
-    })
+    let formattedGameMinusMoves = {
+        ...formattedGame,
+        ...{
+            moves: [],
+        },
+    }
 
     expect(formattedGameMinusMoves).toEqual({
         site: 'chess.com',
