@@ -38,7 +38,7 @@ test('fetch players of a team', async () => {
     await teamMembers('test-team', (game) => {
         expect(game.site).toBe('lichess')
     }).then((done) => {
-        expect(done).toBe(true)
+        expect(done).toBeUndefined()
     })
 })
 
@@ -66,7 +66,7 @@ test('fetch player games', async () => {
     await playerGames('EricRosen', (game) => {
         expect(game.site).toBe('lichess')
     }).then((done) => {
-        expect(done).toBe(true)
+        expect(done).toBeUndefined()
     })
 })
 
@@ -94,7 +94,7 @@ test('fetch arena games', async () => {
     await arenaGames('2oEh6hZw', (game) => {
         expect(game.site).toBe('lichess')
     }).then((done) => {
-        expect(done).toBe(true)
+        expect(done).toBeUndefined()
     })
 })
 
@@ -103,7 +103,7 @@ test('fetch swiss games', async () => {
     await swissGames('48jrx3m6', (game) => {
         expect(game.site).toBe('lichess')
     }).then((done) => {
-        expect(done).toBe(true)
+        expect(done).toBeUndefined()
     })
 })
 
@@ -113,7 +113,7 @@ test('games', async () => {
             'https://lichess.org/api/games/user/EricRosen',
             vi.fn(() => {})
         )
-    ).resolves.toBe(true)
+    ).resolves.toBeUndefined()
 })
 
 test('individual game', async () => {

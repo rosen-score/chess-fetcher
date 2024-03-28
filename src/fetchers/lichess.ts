@@ -48,7 +48,7 @@ export function swissGames(id: string, callback: GameCallback, params: LichessGa
     return games(`https://lichess.org/api/swiss/${id}/games`, callback, params)
 }
 
-export async function games(url: string, callback: GameCallback, params: LichessGameParameters = {}): Promise<boolean> {
+export async function games(url: string, callback: GameCallback, params: LichessGameParameters = {}): Promise<void> {
     let response = await fetchFromEndpoint(url + qs(params), {
         headers: {
             Accept: 'application/x-ndjson',
@@ -57,24 +57,17 @@ export async function games(url: string, callback: GameCallback, params: Lichess
 
     checkForServerError(response)
 
-    return new Promise(async (resolve) => {
-        let reader = response.body!.getReader()
-        let gen = ndjson(reader)
+    let reader = response.body!.getReader()
+    let gen = ndjson(reader)
 
-        while (true) {
-            let { done, value } = await gen.next()
-
-            if (done) {
-                resolve(true)
-                return
-            }
-
-            callback(formatGame(value))
-        }
-    })
+    while (true) {
+        let { done, value } = await gen.next()
+        if (done) return
+        callback(formatGame(value))
+    }
 }
 
-export async function teamMembers(teamId: string, callback: (player: Profile) => void): Promise<boolean> {
+export async function teamMembers(teamId: string, callback: (player: Profile) => void): Promise<void> {
     let response = await fetchFromEndpoint(`https://lichess.org/api/team/${teamId}/users`, {
         headers: {
             Accept: 'application/x-ndjson',
@@ -83,21 +76,14 @@ export async function teamMembers(teamId: string, callback: (player: Profile) =>
 
     checkForServerError(response)
 
-    return new Promise(async (resolve) => {
-        let reader = response.body!.getReader()
-        let gen = ndjson(reader)
+    let reader = response.body!.getReader()
+    let gen = ndjson(reader)
 
-        while (true) {
-            let { done, value } = await gen.next()
-
-            if (done) {
-                resolve(true)
-                return
-            }
-
-            callback(formatProfile(value))
-        }
-    })
+    while (true) {
+        let { done, value } = await gen.next()
+        if (done) return
+        callback(formatProfile(value))
+    }
 }
 
 export function game(url: string): Promise<Game> {

@@ -49,7 +49,7 @@ export function player(url: string): Promise<Profile> {
  * @returns Promise when all players are fetched
  * @throws Error if the URL is invalid
  */
-export function players(url: string, callback: (player: Profile) => void): Promise<boolean> {
+export function players(url: string, callback: (player: Profile) => void): Promise<void> {
     const team = url.substring(url.lastIndexOf('/') + 1)
 
     if (url.startsWith('https://lichess.org/team/')) {
@@ -110,7 +110,7 @@ export function games(
     url: string,
     callback: GameCallback,
     params: LichessGameParameters | ChesscomGameParameters = {}
-): Promise<boolean> {
+): Promise<void> {
     const id = url.substring(url.lastIndexOf('/') + 1)
 
     if (url.startsWith('https://lichess.org/@/')) {

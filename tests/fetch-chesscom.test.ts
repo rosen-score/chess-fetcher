@@ -41,7 +41,7 @@ test('fetch single month archive via method', async () => {
     await playerGamesForMonth('imrosen', 2022, 5, (game) => {
         expect(game.site).toBe('chess.com')
     }).then((done) => {
-        expect(done).toBe(true)
+        expect(done).toBeUndefined()
     })
 })
 
@@ -52,7 +52,7 @@ test('fetch player games', async () => {
     await playerGames('imrosen', (game) => {
         expect(game.site).toBe('chess.com')
     }).then((done) => {
-        expect(done).toBe(true)
+        expect(done).toBeUndefined()
     })
 })
 
@@ -164,7 +164,7 @@ test('fetch tournament games (arena)', async () => {
     await tournamentGames('10-bullet-1925132', (game) => {
         expect(game.site).toBe('chess.com')
     }).then((data) => {
-        expect(data).toBe(true)
+        expect(data).toBeUndefined()
     })
 })
 
@@ -175,7 +175,7 @@ test('fetch tournament games (swiss)', async () => {
     await tournamentGames('late-titled-tuesday-blitz-june-07-2022-3192103', (game) => {
         expect(game.site).toBe('chess.com')
     }).then((data) => {
-        expect(data).toBe(true)
+        expect(data).toBeUndefined()
     })
 })
 

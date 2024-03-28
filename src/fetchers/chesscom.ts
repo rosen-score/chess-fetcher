@@ -39,22 +39,17 @@ export function archive(archiveUrl: string): Promise<ChessComArchive> {
     })
 }
 
-export function playerGamesForMonth(
+export async function playerGamesForMonth(
     username: string,
     year: number,
     month: number,
     callback: GameCallback
-): Promise<boolean> {
-    return new Promise(async (resolve, reject) => {
-        let month2digit: string = ('0' + month.toString()).slice(-2)
-        await archive(`https://api.chess.com/pub/player/${username}/games/${year}/${month2digit}`)
-            .then((json) => {
-                for (let game of json.games) {
-                    callback(formatGame(game))
-                }
-            })
-            .then(() => resolve(true))
-            .catch((error) => reject(error))
+): Promise<void> {
+    let month2digit: string = ('0' + month.toString()).slice(-2)
+    await archive(`https://api.chess.com/pub/player/${username}/games/${year}/${month2digit}`).then((json) => {
+        for (let game of json.games) {
+            callback(formatGame(game))
+        }
     })
 }
 
@@ -62,7 +57,7 @@ export function playerGames(
     username: string,
     callback: GameCallback,
     params: ChesscomGameParameters = {}
-): Promise<boolean> {
+): Promise<void> {
     if (params.since && params.since.toString().length !== 13) {
         throw new Error('Invalid timestamp format: Use 13-digit timestamp (w/ milliseconds)')
     }
@@ -98,39 +93,34 @@ export function playerGames(
                     })
                 }
             })
-            .then(() => resolve(true))
+            .then(() => resolve())
             .catch((error) => reject(error))
     })
 }
 
-export function tournamentGames(id: string, callback: GameCallback): Promise<boolean> {
-    return new Promise(async (resolve, reject) => {
-        let allTitledPlayers = await titledPlayers()
+export async function tournamentGames(id: string, callback: GameCallback): Promise<void> {
+    let allTitledPlayers = await titledPlayers()
 
-        await fetchFromEndpoint(`https://api.chess.com/pub/tournament/${id}`)
-            .then((response) => {
-                checkForServerError(response)
-                return response.json()
-            })
-            .then(async (data) => {
-                let url = data.rounds[0]
+    await fetchFromEndpoint(`https://api.chess.com/pub/tournament/${id}`)
+        .then((response) => {
+            checkForServerError(response)
+            return response.json()
+        })
+        .then(async (data) => {
+            let url = data.rounds[0]
 
-                if (data.settings.type === 'swiss') {
-                    url += '/1'
-                }
+            if (data.settings.type === 'swiss') {
+                url += '/1'
+            }
 
-                await fetchFromEndpoint(url)
-                    .then((response) => response.json())
-                    .then((gameArchive: ChessComArchive) => {
-                        gameArchive.games.forEach((game) => {
-                            callback(formatGame(game, allTitledPlayers))
-                        })
+            await fetchFromEndpoint(url)
+                .then((response) => response.json())
+                .then((gameArchive: ChessComArchive) => {
+                    gameArchive.games.forEach((game) => {
+                        callback(formatGame(game, allTitledPlayers))
                     })
-            })
-            .catch((error) => reject(error))
-
-        resolve(true)
-    })
+                })
+        })
 }
 
 export function game(url: string): Promise<Game> {
@@ -166,29 +156,27 @@ function botAccounts(): string[] {
     return ['stockfish', 'computer4-impossible', ...Array.from({ length: 25 }, (_, i) => `komodo${i + 1}`)]
 }
 
-export function titledPlayers(
+export async function titledPlayers(
     titles: Array<Title> = ['CM', 'FM', 'GM', 'IM', 'NM', 'WCM', 'WFM', 'WGM', 'WIM', 'WNM', 'BOT']
 ): Promise<TitledPlayers> {
-    return new Promise(async (resolve) => {
-        let allTitledPlayers: TitledPlayers = {}
+    let allTitledPlayers: TitledPlayers = {}
 
-        for (let title of titles) {
-            if (title === 'BOT') continue
-            await fetchFromEndpoint(`https://api.chess.com/pub/titled/${title}`)
-                .then((response) => response.json())
-                .then((players: { players: string[] }) => {
-                    players.players.forEach((player) => (allTitledPlayers[player.toLowerCase()] = title))
-                })
+    for (let title of titles) {
+        if (title === 'BOT') continue
+        await fetchFromEndpoint(`https://api.chess.com/pub/titled/${title}`)
+            .then((response) => response.json())
+            .then((players: { players: string[] }) => {
+                players.players.forEach((player) => (allTitledPlayers[player.toLowerCase()] = title))
+            })
+    }
+
+    if (titles.includes('BOT')) {
+        for (let bot of botAccounts()) {
+            allTitledPlayers[bot] = 'BOT'
         }
+    }
 
-        if (titles.includes('BOT')) {
-            for (let bot of botAccounts()) {
-                allTitledPlayers[bot] = 'BOT'
-            }
-        }
-
-        return resolve(allTitledPlayers)
-    })
+    return allTitledPlayers
 }
 
 export function stats(username: string): Promise<ChesscomStats> {

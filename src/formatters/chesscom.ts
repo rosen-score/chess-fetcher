@@ -205,7 +205,7 @@ function swapColor(color: ChessColor): ChessColor {
 function formatGamePlayer(player: ChessComGamePlayer, titledPlayers?: TitledPlayers): GamePlayer {
     let title: Title = null
 
-    if (titledPlayers && titledPlayers[player.username.toLowerCase()]) {
+    if (titledPlayers?.[player.username.toLowerCase()]) {
         title = titledPlayers[player.username.toLowerCase()]
     }
 

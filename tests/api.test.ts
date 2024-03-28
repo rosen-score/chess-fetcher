@@ -25,7 +25,7 @@ describe('fetching players of a team', () => {
         await players('https://lichess.org/team/test-team', (player) => {
             expect(player.site).toBe('lichess')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
 })
@@ -111,7 +111,7 @@ describe('fetching games', () => {
         await games('https://lichess.org/@/EricRosen', (game) => {
             expect(game.site).toBe('lichess')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
     test('of a chess.com player', async () => {
@@ -119,7 +119,7 @@ describe('fetching games', () => {
         await games('https://www.chess.com/member/imrosen', (game) => {
             expect(game.site).toBe('chess.com')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
     test('of a lichess arena', async () => {
@@ -127,7 +127,7 @@ describe('fetching games', () => {
         await games('https://lichess.org/tournament/2oEh6hZw', (game) => {
             expect(game.site).toBe('lichess')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
     test('of a lichess swiss', async () => {
@@ -135,7 +135,7 @@ describe('fetching games', () => {
         await games('https://lichess.org/swiss/48jrx3m6', (game) => {
             expect(game.site).toBe('lichess')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
     test('of a chess.com arena', async () => {
@@ -143,7 +143,7 @@ describe('fetching games', () => {
         await games('https://www.chess.com/tournament/live/arena/10-bullet-1925132', (game) => {
             expect(game.site).toBe('chess.com')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
     test('of a chess.com swiss', async () => {
@@ -151,7 +151,7 @@ describe('fetching games', () => {
         await games('https://www.chess.com/tournament/live/late-titled-tuesday-blitz-june-07-2022-3192103', (game) => {
             expect(game.site).toBe('chess.com')
         }).then((done) => {
-            expect(done).toBe(true)
+            expect(done).toBeUndefined()
         })
     })
 })
