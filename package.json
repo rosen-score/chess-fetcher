@@ -1,5 +1,8 @@
 {
     "name": "chess-fetcher",
+    "repository": {
+        "url": "https://github.com/rosen-score/chess-fetcher"
+    },
     "version": "0.10.2",
     "scripts": {
         "build": "tsc",
