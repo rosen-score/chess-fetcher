@@ -3,7 +3,7 @@
     "repository": {
         "url": "https://github.com/rosen-score/chess-fetcher"
     },
-    "version": "0.10.3",
+    "version": "0.10.4",
     "scripts": {
         "build": "tsc",
         "coverage": "vitest run --coverage --coverage.thresholds.100",
