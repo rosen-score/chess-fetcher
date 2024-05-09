@@ -6,13 +6,13 @@ jobs:
     test-suite:
         strategy:
             matrix:
-                node: ['latest']
+                node: [20, 'latest']
                 os: [ubuntu-latest]
         runs-on: ${{ matrix.os }}
         timeout-minutes: 1
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node }}
             - run: npm ci
@@ -22,29 +22,25 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 1
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
               with:
                   node-version: 'latest'
             - run: npm ci
             - run: npm run coverage
-            - name: Upload coverage to Codecov
-              uses: codecov/codecov-action@v3.1.0
-              with:
-                  fail_ci_if_error: true
 
     check-formatting:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
             - run: npm ci
             - run: npx prettier --check .
 
     check-typescript:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
             - run: npm ci
             - run: npx tsc --noEmit
