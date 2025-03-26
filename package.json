@@ -17,12 +17,12 @@
         "@fastify/static": "^7.0.0",
         "@mliebelt/pgn-types": "^1.0.3",
         "@types/node": "^20.11.0",
-        "@vitest/coverage-v8": "^1.2.0",
+        "@vitest/coverage-v8": "^1.6.1",
         "fastify": "^4.0.0",
         "prettier": "^3.0.0",
         "ts-node": "^10.8.0",
         "typescript": "^5.0.0",
-        "vitest": "^1.2.0"
+        "vitest": "^1.6.1"
     },
     "dependencies": {
         "@mliebelt/pgn-parser": "^1.4.6",
