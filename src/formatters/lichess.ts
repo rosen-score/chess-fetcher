@@ -141,6 +141,12 @@ export function getResult(json: Partial<LichessGame>): Result {
                 outcome: 'draw',
                 label: '½-½',
             }
+        case 'insufficientMaterialClaim':
+            return {
+                outcome: 'draw',
+                via: 'insufficient',
+                label: '½-½',
+            }
         case 'stalemate':
             return {
                 outcome: 'draw',

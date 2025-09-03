@@ -464,6 +464,7 @@ describe('results', () => {
         // draws
         [{ status: 'stalemate' }, { outcome: 'draw', via: 'stalemate', label: '½-½' }],
         [{ status: 'draw' }, { outcome: 'draw', label: '½-½' }],
+        [{ status: 'insufficientMaterialClaim' }, { outcome: 'draw', via: 'insufficient', label: '½-½' }],
         // wins/losses
         [
             { status: 'mate', winner: 'black' },
