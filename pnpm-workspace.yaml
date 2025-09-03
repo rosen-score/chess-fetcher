@@ -1,5 +1,0 @@
-onlyBuiltDependencies:
-  - esbuild
-
-overrides:
-  chess-fetcher: link:../../.local/share/pnpm/global/5/node_modules/chess-fetcher

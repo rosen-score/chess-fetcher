@@ -15,6 +15,9 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node }}
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: true
             - run: npm ci
             - run: npm test
 
@@ -26,6 +29,9 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 'latest'
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: true
             - run: npm ci
             - run: npm run coverage
 
@@ -34,6 +40,9 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: true
             - run: npm ci
             - run: npx prettier --check .
 
@@ -42,5 +51,8 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
+            - uses: pnpm/action-setup@v4
+              with:
+                  run_install: true
             - run: npm ci
             - run: npx tsc --noEmit

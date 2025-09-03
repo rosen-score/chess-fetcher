@@ -1,1 +1,5 @@
+*.json
+pnpm-lock.yaml
+
 coverage
+dist
