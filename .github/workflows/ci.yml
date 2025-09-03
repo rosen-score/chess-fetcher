@@ -18,8 +18,7 @@ jobs:
             - uses: pnpm/action-setup@v4
               with:
                   run_install: true
-            - run: npm ci
-            - run: npm test
+            - run: pnpm test
 
     code-coverage:
         runs-on: ubuntu-latest
@@ -32,8 +31,7 @@ jobs:
             - uses: pnpm/action-setup@v4
               with:
                   run_install: true
-            - run: npm ci
-            - run: npm run coverage
+            - run: pnpm run coverage
 
     check-formatting:
         runs-on: ubuntu-latest
@@ -43,8 +41,7 @@ jobs:
             - uses: pnpm/action-setup@v4
               with:
                   run_install: true
-            - run: npm ci
-            - run: npx prettier --check .
+            - run: pnpx prettier --check .
 
     check-typescript:
         runs-on: ubuntu-latest
@@ -54,5 +51,4 @@ jobs:
             - uses: pnpm/action-setup@v4
               with:
                   run_install: true
-            - run: npm ci
-            - run: npx tsc --noEmit
+            - run: pnpm run tsc
