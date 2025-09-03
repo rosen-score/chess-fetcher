@@ -27,7 +27,6 @@
     },
     "dependencies": {
         "@mliebelt/pgn-parser": "^1.4.18",
-        "chess-fetcher": "link:../../.local/share/pnpm/global/5/node_modules/chess-fetcher",
         "fetch-ndjson": "^1.1.7"
     },
     "main": "dist/src/api.js",

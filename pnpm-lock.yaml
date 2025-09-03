@@ -11,9 +11,6 @@ importers:
       '@mliebelt/pgn-parser':
         specifier: ^1.4.18
         version: 1.4.18
-      chess-fetcher:
-        specifier: link:../../.local/share/pnpm/global/5/node_modules/chess-fetcher
-        version: link:../../.local/share/pnpm/global/5/node_modules/chess-fetcher
       fetch-ndjson:
         specifier: ^1.1.7
         version: 1.1.7
