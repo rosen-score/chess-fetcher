@@ -25,7 +25,7 @@ games('https://lichess.org/@/DrNykterstein', (game) => {
 ### Demo
 
 ```bash
-npx tsx demo.ts
+pnpx tsx demo.ts
 ```
 
 ## Development Notes
@@ -40,9 +40,9 @@ Github workflow will auto publish it to npm.
 ### Linking as a local package
 
     cd chess-fetcher
-    npm link
+    pnpm link chess-fetcher
     cd ../rosen-score
-    npm uninstall chess-fetcher
-    npm link chess-fetcher
+    pnpm uninstall chess-fetcher
+    pnpm link chess-fetcher
 
 After making any changes to `chess-fetcher`, run `npm run build` to update the symlink'ed code for `rosen-score`.
