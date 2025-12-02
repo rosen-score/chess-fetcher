@@ -44,6 +44,7 @@ export function fetchFromEndpoint(url: string, options: FetchOptions = {}) {
         ...options,
     }
 
+    /* v8 ignore if -- @preserve */
     if (process.env.NODE_ENV === 'test') {
         url = getMockServerEndpoint(url)
     }
